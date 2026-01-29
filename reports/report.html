@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>DQ Scan Report</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 24px; color: #222; }
+    h1 { margin-bottom: 8px; }
+    h2 { margin-top: 24px; }
+    .meta { font-size: 14px; color: #444; }
+    table { border-collapse: collapse; width: 100%; margin-top: 8px; }
+    th, td { border: 1px solid #ddd; padding: 8px; vertical-align: top; }
+    th { background: #f5f5f5; text-align: left; }
+    tr:nth-child(even) { background: #fafafa; }
+    td { word-break: break-word; overflow-wrap: anywhere; }
+    .pass { color: #0a7d23; font-weight: 600; }
+    .fail { color: #b00020; font-weight: 600; }
+  </style>
+</head>
+<body>
+  <h1>DQ Scan Report</h1>
+
+  <div class="meta">
+    <div><strong>Input:</strong> data\sample.csv</div>
+    <div><strong>Rules:</strong> configs\rules.yaml</div>
+    <div><strong>Rows:</strong> 12 | <strong>Cols:</strong> 9</div>
+    <div><strong>Created:</strong> 2026-01-28T06:19:15.566370+00:00</div>
+  </div>
+
+  <h2>Summary</h2>
+  <div>Pass: <span class="pass">9</span> | Fail: <span class="fail">2</span></div>
+
+  <h2>Top Issues</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>type</th>
+        <th>column</th>
+        <th>severity</th>
+        <th>violation_rate</th>
+        <th>score</th>
+        <th>message</th>
+      </tr>
+    </thead>
+    <tbody>
+<tr><td>R10_outlier_amount_iqr</td><td></td><td>-</td><td></td><td></td><td>0.5</td><td>above maximum outlier rate</td></tr>
+<tr><td>R7_pattern_email</td><td></td><td>-</td><td></td><td></td><td></td><td>missing threshold</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Full Results</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>type</th>
+        <th>column</th>
+        <th>pass</th>
+        <th>actual.value</th>
+        <th>threshold</th>
+        <th>violation_rate</th>
+        <th>severity</th>
+        <th>score</th>
+        <th>message</th>
+        <th>samples</th>
+      </tr>
+    </thead>
+    <tbody>
+<tr><td>R1_completeness_user_id</td><td>completeness</td><td>user_id</td><td>True</td><td>1.0</td><td>min=1.0</td><td>0.0</td><td>critical</td><td>0.0</td><td></td><td></td></tr>
+<tr><td>R2_completeness_age</td><td>missing_rate</td><td>age</td><td>True</td><td>0.0</td><td>max=0.05</td><td>0.0</td><td>high</td><td>0.0</td><td></td><td></td></tr>
+<tr><td>R3_uniqueness_user_id</td><td>uniqueness</td><td>user_id</td><td>True</td><td>1.0</td><td>min=0.999</td><td>0.0</td><td>critical</td><td>0.0</td><td></td><td></td></tr>
+<tr><td>R4_type_age_numeric</td><td>type</td><td>age</td><td>True</td><td>1.0</td><td>min=0.99</td><td>0.0</td><td>high</td><td>0.0</td><td></td><td></td></tr>
+<tr><td>R5_type_signup_dt</td><td>type</td><td>signup_date</td><td>True</td><td>1.0</td><td>min=0.99</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td></tr>
+<tr><td>R6_range_age</td><td>range</td><td>age</td><td>True</td><td>1.0</td><td>min=0.99, min_value=0, max_value=120</td><td>0.0</td><td>high</td><td>0.0</td><td></td><td></td></tr>
+<tr><td>R7_pattern_email</td><td>pattern</td><td>email</td><td>False</td><td></td><td>regex=...</td><td></td><td>medium</td><td></td><td>missing threshold</td><td></td></tr>
+<tr><td>R8_predicate_end_after_start</td><td>predicate</td><td>-</td><td>True</td><td>1.0</td><td>min=0.99, expr=end_time &gt;= start_time</td><td>0.0</td><td>high</td><td>0.0</td><td></td><td></td></tr>
+<tr><td>R9_outlier_income_mad</td><td>outlier</td><td>income</td><td>True</td><td>0.0</td><td>max=0.02, method=mad, mad_threshold=3.5</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td></tr>
+<tr><td>R10_outlier_amount_iqr</td><td>outlier</td><td>amount</td><td>False</td><td>0.16666666666666666</td><td>max=0.02, method=iqr, iqr_k=1.5</td><td>0.16666666666666666</td><td>low</td><td>0.5</td><td>above maximum outlier rate</td><td>7:450.0, 11:500.0</td></tr>
+<tr><td>R11_domain_country</td><td>domain</td><td>country</td><td>True</td><td>1.0</td><td>min=0.98, allowed=4 values</td><td>0.0</td><td>low</td><td>0.0</td><td></td><td></td></tr>
+    </tbody>
+  </table>
+
+</body>
+</html>

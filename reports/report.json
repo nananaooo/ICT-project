@@ -1,0 +1,243 @@
+{
+  "meta": {
+    "input_path": "data\\sample.csv",
+    "rules_path": "configs\\rules.yaml",
+    "rows": 12,
+    "cols": 9,
+    "created_at": "2026-01-28T06:19:15.566370+00:00"
+  },
+  "summary": {
+    "pass": 9,
+    "fail": 2,
+    "top_issues": [
+      {
+        "id": "R10_outlier_amount_iqr",
+        "score": 0.5,
+        "message": "above maximum outlier rate"
+      },
+      {
+        "id": "R7_pattern_email",
+        "score": null,
+        "message": "missing threshold"
+      }
+    ]
+  },
+  "results": [
+    {
+      "id": "R1_completeness_user_id",
+      "type": "completeness",
+      "column": "user_id",
+      "threshold": {
+        "min": 1.0,
+        "max": null
+      },
+      "actual": {
+        "value": 1.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "critical",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R2_completeness_age",
+      "type": "missing_rate",
+      "column": "age",
+      "threshold": {
+        "min": null,
+        "max": 0.05
+      },
+      "actual": {
+        "value": 0.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "high",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R3_uniqueness_user_id",
+      "type": "uniqueness",
+      "column": "user_id",
+      "threshold": {
+        "min": 0.999,
+        "max": null
+      },
+      "actual": {
+        "value": 1.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "critical",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R4_type_age_numeric",
+      "type": "type",
+      "column": "age",
+      "threshold": {
+        "min": 0.99,
+        "max": null
+      },
+      "actual": {
+        "value": 1.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "high",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R5_type_signup_dt",
+      "type": "type",
+      "column": "signup_date",
+      "threshold": {
+        "min": 0.99,
+        "max": null
+      },
+      "actual": {
+        "value": 1.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R6_range_age",
+      "type": "range",
+      "column": "age",
+      "threshold": {
+        "min": 0.99,
+        "max": null,
+        "min_value": 0,
+        "max_value": 120
+      },
+      "actual": {
+        "value": 1.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "high",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R7_pattern_email",
+      "type": "pattern",
+      "column": "email",
+      "threshold": {
+        "min": null,
+        "max": null,
+        "regex": "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$"
+      },
+      "actual": {
+        "value": null
+      },
+      "pass": false,
+      "violation_rate": null,
+      "severity": "medium",
+      "score": null,
+      "message": "missing threshold"
+    },
+    {
+      "id": "R8_predicate_end_after_start",
+      "type": "predicate",
+      "column": null,
+      "threshold": {
+        "min": 0.99,
+        "max": null,
+        "columns": null,
+        "operator": null,
+        "expression": "end_time >= start_time"
+      },
+      "actual": {
+        "value": 1.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "high",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R9_outlier_income_mad",
+      "type": "outlier",
+      "column": "income",
+      "threshold": {
+        "min": null,
+        "max": 0.02,
+        "method": "mad",
+        "sample_n": 5,
+        "mad_threshold": 3.5
+      },
+      "actual": {
+        "value": 0.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": "",
+      "samples": []
+    },
+    {
+      "id": "R10_outlier_amount_iqr",
+      "type": "outlier",
+      "column": "amount",
+      "threshold": {
+        "min": null,
+        "max": 0.02,
+        "method": "iqr",
+        "sample_n": 5,
+        "iqr_k": 1.5
+      },
+      "actual": {
+        "value": 0.16666666666666666
+      },
+      "pass": false,
+      "violation_rate": 0.16666666666666666,
+      "severity": "low",
+      "score": 0.5,
+      "message": "above maximum outlier rate",
+      "samples": [
+        {
+          "row": 7,
+          "value": 450.0
+        },
+        {
+          "row": 11,
+          "value": 500.0
+        }
+      ]
+    },
+    {
+      "id": "R11_domain_country",
+      "type": "domain",
+      "column": "country",
+      "threshold": {
+        "min": 0.98,
+        "max": null,
+        "allowed_values": [
+          "KR",
+          "US",
+          "JP",
+          "CN"
+        ]
+      },
+      "actual": {
+        "value": 1.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "low",
+      "score": 0.0,
+      "message": ""
+    }
+  ]
+}
