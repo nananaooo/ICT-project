@@ -18,6 +18,28 @@ python -m dqscan --input data/sample.csv --rules configs/rules.yaml --out report
 
 This generates `report.json` and `report.html` in the output directory. The HTML report includes a Top Issues table.
 
+## Local Transformers + bitsandbytes (optional)
+
+If you want to run the rule copilot locally (no Hugging Face API server), install:
+
+```powershell
+pip install transformers bitsandbytes accelerate sentencepiece
+```
+
+Then set these env vars:
+
+```powershell
+$env:TRANSFORMERS_MODEL="meta-llama/Llama-3.1-8B-Instruct"
+$env:TRANSFORMERS_LOAD_IN_4BIT="true"
+$env:TRANSFORMERS_CTX="4096"
+```
+
+Then run:
+
+```powershell
+python -m dqscan --input data/sample.csv --out reports --rules-from-nl-file rule_copilot_demo\user_input_NL
+```
+
 ## Tests
 
 ```powershell

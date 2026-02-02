@@ -1,0 +1,5 @@
+﻿EQ.csv 데이터셋에 대해 다음 규칙을 만들어줘:
+1) class 컬럼은 "buggy" 또는 "clean"만 허용
+2) numeric 컬럼 전체(단, class 제외)는 missing_rate <= 0.01
+3) numeric 컬럼 전체(단, class 제외)는 type numeric 파싱 성공률 >= 0.99
+4) numeric 컬럼 전체(단, class 제외)는 IQR outlier 비율 <= 0.15
