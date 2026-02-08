@@ -1,0 +1,5184 @@
+{
+  "meta": {
+    "input_path": "data\\EQ.csv",
+    "rules_path": "rules.generated.yaml",
+    "rows": 324,
+    "cols": 62,
+    "created_at": "2026-02-08T12:08:00.844786+00:00"
+  },
+  "summary": {
+    "pass": 180,
+    "fail": 5,
+    "top_issues": [
+      {
+        "id": "R_outlier_iqr_numeric_all__col=numberOfMajorBugsFoundUntil:",
+        "type": "outlier",
+        "column": "numberOfMajorBugsFoundUntil:",
+        "severity": "medium",
+        "violation_rate": 0.2345679012345679,
+        "score": 2.3456790123456788,
+        "message": "above maximum outlier rate",
+        "violation_rows": [
+          1,
+          2,
+          3,
+          4,
+          7,
+          9,
+          12,
+          17,
+          22,
+          27,
+          38,
+          42,
+          43,
+          50,
+          51,
+          56,
+          57,
+          61,
+          63,
+          65,
+          66,
+          67,
+          69,
+          73,
+          76,
+          82,
+          86,
+          87,
+          94,
+          96,
+          100,
+          109,
+          110,
+          111,
+          119,
+          122,
+          129,
+          132,
+          137,
+          151,
+          164,
+          170,
+          179,
+          185,
+          189,
+          207,
+          208,
+          209,
+          211,
+          223,
+          226,
+          227,
+          241,
+          245,
+          248,
+          250,
+          252,
+          253,
+          254,
+          256,
+          258,
+          262,
+          270,
+          282,
+          290,
+          294,
+          295,
+          296,
+          297,
+          298,
+          300,
+          305,
+          310,
+          311,
+          314,
+          322
+        ]
+      },
+      {
+        "id": "R_outlier_iqr_numeric_all__col=WCHU_numberOfPrivateMethods",
+        "type": "outlier",
+        "column": "WCHU_numberOfPrivateMethods",
+        "severity": "medium",
+        "violation_rate": 0.20679012345679013,
+        "score": 2.067901234567901,
+        "message": "above maximum outlier rate",
+        "violation_rows": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          7,
+          9,
+          12,
+          15,
+          17,
+          19,
+          30,
+          42,
+          43,
+          45,
+          50,
+          52,
+          56,
+          62,
+          65,
+          66,
+          67,
+          73,
+          76,
+          78,
+          84,
+          87,
+          105,
+          109,
+          110,
+          114,
+          120,
+          124,
+          129,
+          131,
+          134,
+          151,
+          155,
+          169,
+          170,
+          189,
+          193,
+          199,
+          208,
+          210,
+          222,
+          223,
+          224,
+          232,
+          234,
+          241,
+          245,
+          246,
+          248,
+          250,
+          252,
+          253,
+          256,
+          262,
+          279,
+          281,
+          289,
+          293,
+          294,
+          296,
+          297,
+          311
+        ]
+      },
+      {
+        "id": "R_outlier_iqr_numeric_all__col=ck_oo_dit",
+        "type": "outlier",
+        "column": "ck_oo_dit",
+        "severity": "medium",
+        "violation_rate": 0.2006172839506173,
+        "score": 2.006172839506173,
+        "message": "above maximum outlier rate",
+        "violation_rows": [
+          5,
+          7,
+          12,
+          15,
+          17,
+          23,
+          30,
+          35,
+          48,
+          60,
+          63,
+          64,
+          66,
+          69,
+          71,
+          75,
+          77,
+          78,
+          83,
+          88,
+          92,
+          96,
+          109,
+          120,
+          124,
+          126,
+          130,
+          132,
+          134,
+          136,
+          145,
+          149,
+          158,
+          160,
+          164,
+          166,
+          175,
+          179,
+          182,
+          199,
+          205,
+          207,
+          209,
+          211,
+          215,
+          221,
+          233,
+          239,
+          240,
+          244,
+          247,
+          248,
+          261,
+          262,
+          267,
+          274,
+          275,
+          296,
+          299,
+          300,
+          301,
+          305,
+          309,
+          310,
+          315
+        ]
+      },
+      {
+        "id": "R_domain_class",
+        "type": "domain",
+        "column": "class",
+        "severity": "high",
+        "violation_rate": 0.012422360248447228,
+        "score": 0.37267080745341685,
+        "message": "below minimum compliance",
+        "violation_rows": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "id": "R_missing_class",
+        "type": "missing_rate",
+        "column": "class",
+        "severity": "high",
+        "violation_rate": 0.006172839506172839,
+        "score": 0.18518518518518517,
+        "message": "above maximum missing rate",
+        "violation_rows": [
+          275,
+          285
+        ]
+      }
+    ]
+  },
+  "results": [
+    {
+      "id": "R_domain_class",
+      "type": "domain",
+      "column": "class",
+      "threshold": {
+        "min": 1,
+        "max": null,
+        "allowed_values": [
+          "buggy",
+          "clean"
+        ]
+      },
+      "actual": {
+        "value": 0.9875776397515528
+      },
+      "pass": false,
+      "violation_rate": 0.012422360248447228,
+      "severity": "high",
+      "score": 0.37267080745341685,
+      "message": "below minimum compliance",
+      "violation_rows": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "id": "R_missing_numeric_all__col=CvsEntropy",
+      "type": "missing_rate",
+      "column": "CvsEntropy",
+      "threshold": {
+        "min": null,
+        "max": 0.01
+      },
+      "actual": {
+        "value": 0.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_missing_numeric_all__col=CvsExpEntropy",
+      "type": "missing_rate",
+      "column": "CvsExpEntropy",
+      "threshold": {
+        "min": null,
+        "max": 0.01
+      },
+      "actual": {
+        "value": 0.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_missing_numeric_all__col=CvsLinEntropy",
+      "type": "missing_rate",
+      "column": "CvsLinEntropy",
+      "threshold": {
+        "min": null,
+        "max": 0.01
+      },
+      "actual": {
+        "value": 0.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_missing_numeric_all__col=CvsLogEntropy",
+      "type": "missing_rate",
+      "column": "CvsLogEntropy",
+      "threshold": {
+        "min": null,
+        "max": 0.01
+      },
+      "actual": {
+        "value": 0.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_missing_numeric_all__col=CvsWEntropy",
+      "type": "missing_rate",
+      "column": "CvsWEntropy",
+      "threshold": {
+        "min": null,
+        "max": 0.01
+      },
+      "actual": {
+        "value": 0.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_missing_numeric_all__col=LDHH_cbo",
+      "type": "missing_rate",
+      "column": "LDHH_cbo",
+      "threshold": {
+        "min": null,
+        "max": 0.01
+      },
+      "actual": {
+        "value": 0.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_missing_numeric_all__col=LDHH_dit",
+      "type": "missing_rate",
+      "column": "LDHH_dit",
+      "threshold": {
+        "min": null,
+        "max": 0.01
+      },
+      "actual": {
+        "value": 0.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_missing_numeric_all__col=LDHH_fanIn",
+      "type": "missing_rate",
+      "column": "LDHH_fanIn",
+      "threshold": {
+        "min": null,
+        "max": 0.01
+      },
+      "actual": {
+        "value": 0.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_missing_numeric_all__col=LDHH_fanOut",
+      "type": "missing_rate",
+      "column": "LDHH_fanOut",
+      "threshold": {
+        "min": null,
+        "max": 0.01
+      },
+      "actual": {
+        "value": 0.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_missing_numeric_all__col=LDHH_lcom",
+      "type": "missing_rate",
+      "column": "LDHH_lcom",
+      "threshold": {
+        "min": null,
+        "max": 0.01
+      },
+      "actual": {
+        "value": 0.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_missing_numeric_all__col=LDHH_noc",
+      "type": "missing_rate",
+      "column": "LDHH_noc",
+      "threshold": {
+        "min": null,
+        "max": 0.01
+      },
+      "actual": {
+        "value": 0.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_missing_numeric_all__col=LDHH_numberOfAttributes",
+      "type": "missing_rate",
+      "column": "LDHH_numberOfAttributes",
+      "threshold": {
+        "min": null,
+        "max": 0.01
+      },
+      "actual": {
+        "value": 0.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_missing_numeric_all__col=LDHH_numberOfAttributesInherited",
+      "type": "missing_rate",
+      "column": "LDHH_numberOfAttributesInherited",
+      "threshold": {
+        "min": null,
+        "max": 0.01
+      },
+      "actual": {
+        "value": 0.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_missing_numeric_all__col=LDHH_numberOfLinesOfCode",
+      "type": "missing_rate",
+      "column": "LDHH_numberOfLinesOfCode",
+      "threshold": {
+        "min": null,
+        "max": 0.01
+      },
+      "actual": {
+        "value": 0.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_missing_numeric_all__col=LDHH_numberOfMethods",
+      "type": "missing_rate",
+      "column": "LDHH_numberOfMethods",
+      "threshold": {
+        "min": null,
+        "max": 0.01
+      },
+      "actual": {
+        "value": 0.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_missing_numeric_all__col=LDHH_numberOfMethodsInherited",
+      "type": "missing_rate",
+      "column": "LDHH_numberOfMethodsInherited",
+      "threshold": {
+        "min": null,
+        "max": 0.01
+      },
+      "actual": {
+        "value": 0.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_missing_numeric_all__col=LDHH_numberOfPrivateAttributes",
+      "type": "missing_rate",
+      "column": "LDHH_numberOfPrivateAttributes",
+      "threshold": {
+        "min": null,
+        "max": 0.01
+      },
+      "actual": {
+        "value": 0.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_missing_numeric_all__col=LDHH_numberOfPrivateMethods",
+      "type": "missing_rate",
+      "column": "LDHH_numberOfPrivateMethods",
+      "threshold": {
+        "min": null,
+        "max": 0.01
+      },
+      "actual": {
+        "value": 0.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_missing_numeric_all__col=LDHH_numberOfPublicAttributes",
+      "type": "missing_rate",
+      "column": "LDHH_numberOfPublicAttributes",
+      "threshold": {
+        "min": null,
+        "max": 0.01
+      },
+      "actual": {
+        "value": 0.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_missing_numeric_all__col=LDHH_numberOfPublicMethods",
+      "type": "missing_rate",
+      "column": "LDHH_numberOfPublicMethods",
+      "threshold": {
+        "min": null,
+        "max": 0.01
+      },
+      "actual": {
+        "value": 0.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_missing_numeric_all__col=LDHH_rfc",
+      "type": "missing_rate",
+      "column": "LDHH_rfc",
+      "threshold": {
+        "min": null,
+        "max": 0.01
+      },
+      "actual": {
+        "value": 0.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_missing_numeric_all__col=LDHH_wmc",
+      "type": "missing_rate",
+      "column": "LDHH_wmc",
+      "threshold": {
+        "min": null,
+        "max": 0.01
+      },
+      "actual": {
+        "value": 0.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_missing_numeric_all__col=WCHU_cbo",
+      "type": "missing_rate",
+      "column": "WCHU_cbo",
+      "threshold": {
+        "min": null,
+        "max": 0.01
+      },
+      "actual": {
+        "value": 0.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_missing_numeric_all__col=WCHU_dit",
+      "type": "missing_rate",
+      "column": "WCHU_dit",
+      "threshold": {
+        "min": null,
+        "max": 0.01
+      },
+      "actual": {
+        "value": 0.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_missing_numeric_all__col=WCHU_fanIn",
+      "type": "missing_rate",
+      "column": "WCHU_fanIn",
+      "threshold": {
+        "min": null,
+        "max": 0.01
+      },
+      "actual": {
+        "value": 0.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_missing_numeric_all__col=WCHU_fanOut",
+      "type": "missing_rate",
+      "column": "WCHU_fanOut",
+      "threshold": {
+        "min": null,
+        "max": 0.01
+      },
+      "actual": {
+        "value": 0.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_missing_numeric_all__col=WCHU_lcom",
+      "type": "missing_rate",
+      "column": "WCHU_lcom",
+      "threshold": {
+        "min": null,
+        "max": 0.01
+      },
+      "actual": {
+        "value": 0.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_missing_numeric_all__col=WCHU_noc",
+      "type": "missing_rate",
+      "column": "WCHU_noc",
+      "threshold": {
+        "min": null,
+        "max": 0.01
+      },
+      "actual": {
+        "value": 0.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_missing_numeric_all__col=WCHU_numberOfAttributes",
+      "type": "missing_rate",
+      "column": "WCHU_numberOfAttributes",
+      "threshold": {
+        "min": null,
+        "max": 0.01
+      },
+      "actual": {
+        "value": 0.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_missing_numeric_all__col=WCHU_numberOfAttributesInherited",
+      "type": "missing_rate",
+      "column": "WCHU_numberOfAttributesInherited",
+      "threshold": {
+        "min": null,
+        "max": 0.01
+      },
+      "actual": {
+        "value": 0.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_missing_numeric_all__col=WCHU_numberOfLinesOfCode",
+      "type": "missing_rate",
+      "column": "WCHU_numberOfLinesOfCode",
+      "threshold": {
+        "min": null,
+        "max": 0.01
+      },
+      "actual": {
+        "value": 0.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_missing_numeric_all__col=WCHU_numberOfMethods",
+      "type": "missing_rate",
+      "column": "WCHU_numberOfMethods",
+      "threshold": {
+        "min": null,
+        "max": 0.01
+      },
+      "actual": {
+        "value": 0.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_missing_numeric_all__col=WCHU_numberOfMethodsInherited",
+      "type": "missing_rate",
+      "column": "WCHU_numberOfMethodsInherited",
+      "threshold": {
+        "min": null,
+        "max": 0.01
+      },
+      "actual": {
+        "value": 0.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_missing_numeric_all__col=WCHU_numberOfPrivateAttributes",
+      "type": "missing_rate",
+      "column": "WCHU_numberOfPrivateAttributes",
+      "threshold": {
+        "min": null,
+        "max": 0.01
+      },
+      "actual": {
+        "value": 0.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_missing_numeric_all__col=WCHU_numberOfPrivateMethods",
+      "type": "missing_rate",
+      "column": "WCHU_numberOfPrivateMethods",
+      "threshold": {
+        "min": null,
+        "max": 0.01
+      },
+      "actual": {
+        "value": 0.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_missing_numeric_all__col=WCHU_numberOfPublicAttributes",
+      "type": "missing_rate",
+      "column": "WCHU_numberOfPublicAttributes",
+      "threshold": {
+        "min": null,
+        "max": 0.01
+      },
+      "actual": {
+        "value": 0.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_missing_numeric_all__col=WCHU_numberOfPublicMethods",
+      "type": "missing_rate",
+      "column": "WCHU_numberOfPublicMethods",
+      "threshold": {
+        "min": null,
+        "max": 0.01
+      },
+      "actual": {
+        "value": 0.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_missing_numeric_all__col=WCHU_rfc",
+      "type": "missing_rate",
+      "column": "WCHU_rfc",
+      "threshold": {
+        "min": null,
+        "max": 0.01
+      },
+      "actual": {
+        "value": 0.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_missing_numeric_all__col=WCHU_wmc",
+      "type": "missing_rate",
+      "column": "WCHU_wmc",
+      "threshold": {
+        "min": null,
+        "max": 0.01
+      },
+      "actual": {
+        "value": 0.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_missing_numeric_all__col=ck_oo_cbo",
+      "type": "missing_rate",
+      "column": "ck_oo_cbo",
+      "threshold": {
+        "min": null,
+        "max": 0.01
+      },
+      "actual": {
+        "value": 0.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_missing_numeric_all__col=ck_oo_dit",
+      "type": "missing_rate",
+      "column": "ck_oo_dit",
+      "threshold": {
+        "min": null,
+        "max": 0.01
+      },
+      "actual": {
+        "value": 0.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_missing_numeric_all__col=ck_oo_fanIn",
+      "type": "missing_rate",
+      "column": "ck_oo_fanIn",
+      "threshold": {
+        "min": null,
+        "max": 0.01
+      },
+      "actual": {
+        "value": 0.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_missing_numeric_all__col=ck_oo_fanOut",
+      "type": "missing_rate",
+      "column": "ck_oo_fanOut",
+      "threshold": {
+        "min": null,
+        "max": 0.01
+      },
+      "actual": {
+        "value": 0.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_missing_numeric_all__col=ck_oo_lcom",
+      "type": "missing_rate",
+      "column": "ck_oo_lcom",
+      "threshold": {
+        "min": null,
+        "max": 0.01
+      },
+      "actual": {
+        "value": 0.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_missing_numeric_all__col=ck_oo_noc",
+      "type": "missing_rate",
+      "column": "ck_oo_noc",
+      "threshold": {
+        "min": null,
+        "max": 0.01
+      },
+      "actual": {
+        "value": 0.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_missing_numeric_all__col=ck_oo_numberOfAttributes",
+      "type": "missing_rate",
+      "column": "ck_oo_numberOfAttributes",
+      "threshold": {
+        "min": null,
+        "max": 0.01
+      },
+      "actual": {
+        "value": 0.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_missing_numeric_all__col=ck_oo_numberOfAttributesInherited",
+      "type": "missing_rate",
+      "column": "ck_oo_numberOfAttributesInherited",
+      "threshold": {
+        "min": null,
+        "max": 0.01
+      },
+      "actual": {
+        "value": 0.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_missing_numeric_all__col=ck_oo_numberOfLinesOfCode",
+      "type": "missing_rate",
+      "column": "ck_oo_numberOfLinesOfCode",
+      "threshold": {
+        "min": null,
+        "max": 0.01
+      },
+      "actual": {
+        "value": 0.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_missing_numeric_all__col=ck_oo_numberOfMethods",
+      "type": "missing_rate",
+      "column": "ck_oo_numberOfMethods",
+      "threshold": {
+        "min": null,
+        "max": 0.01
+      },
+      "actual": {
+        "value": 0.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_missing_numeric_all__col=ck_oo_numberOfMethodsInherited",
+      "type": "missing_rate",
+      "column": "ck_oo_numberOfMethodsInherited",
+      "threshold": {
+        "min": null,
+        "max": 0.01
+      },
+      "actual": {
+        "value": 0.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_missing_numeric_all__col=ck_oo_numberOfPrivateAttributes",
+      "type": "missing_rate",
+      "column": "ck_oo_numberOfPrivateAttributes",
+      "threshold": {
+        "min": null,
+        "max": 0.01
+      },
+      "actual": {
+        "value": 0.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_missing_numeric_all__col=ck_oo_numberOfPrivateMethods",
+      "type": "missing_rate",
+      "column": "ck_oo_numberOfPrivateMethods",
+      "threshold": {
+        "min": null,
+        "max": 0.01
+      },
+      "actual": {
+        "value": 0.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_missing_numeric_all__col=ck_oo_numberOfPublicAttributes",
+      "type": "missing_rate",
+      "column": "ck_oo_numberOfPublicAttributes",
+      "threshold": {
+        "min": null,
+        "max": 0.01
+      },
+      "actual": {
+        "value": 0.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_missing_numeric_all__col=ck_oo_numberOfPublicMethods",
+      "type": "missing_rate",
+      "column": "ck_oo_numberOfPublicMethods",
+      "threshold": {
+        "min": null,
+        "max": 0.01
+      },
+      "actual": {
+        "value": 0.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_missing_numeric_all__col=ck_oo_rfc",
+      "type": "missing_rate",
+      "column": "ck_oo_rfc",
+      "threshold": {
+        "min": null,
+        "max": 0.01
+      },
+      "actual": {
+        "value": 0.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_missing_numeric_all__col=ck_oo_wmc",
+      "type": "missing_rate",
+      "column": "ck_oo_wmc",
+      "threshold": {
+        "min": null,
+        "max": 0.01
+      },
+      "actual": {
+        "value": 0.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_missing_numeric_all__col=numberOfBugsFoundUntil:",
+      "type": "missing_rate",
+      "column": "numberOfBugsFoundUntil:",
+      "threshold": {
+        "min": null,
+        "max": 0.01
+      },
+      "actual": {
+        "value": 0.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_missing_numeric_all__col=numberOfCriticalBugsFoundUntil:",
+      "type": "missing_rate",
+      "column": "numberOfCriticalBugsFoundUntil:",
+      "threshold": {
+        "min": null,
+        "max": 0.01
+      },
+      "actual": {
+        "value": 0.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_missing_numeric_all__col=numberOfHighPriorityBugsFoundUntil:",
+      "type": "missing_rate",
+      "column": "numberOfHighPriorityBugsFoundUntil:",
+      "threshold": {
+        "min": null,
+        "max": 0.01
+      },
+      "actual": {
+        "value": 0.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_missing_numeric_all__col=numberOfMajorBugsFoundUntil:",
+      "type": "missing_rate",
+      "column": "numberOfMajorBugsFoundUntil:",
+      "threshold": {
+        "min": null,
+        "max": 0.01
+      },
+      "actual": {
+        "value": 0.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_missing_numeric_all__col=numberOfNonTrivialBugsFoundUntil:",
+      "type": "missing_rate",
+      "column": "numberOfNonTrivialBugsFoundUntil:",
+      "threshold": {
+        "min": null,
+        "max": 0.01
+      },
+      "actual": {
+        "value": 0.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_type_numeric_all__col=CvsEntropy",
+      "type": "type",
+      "column": "CvsEntropy",
+      "threshold": {
+        "min": 0.99,
+        "max": null
+      },
+      "actual": {
+        "value": 1.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_type_numeric_all__col=CvsExpEntropy",
+      "type": "type",
+      "column": "CvsExpEntropy",
+      "threshold": {
+        "min": 0.99,
+        "max": null
+      },
+      "actual": {
+        "value": 1.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_type_numeric_all__col=CvsLinEntropy",
+      "type": "type",
+      "column": "CvsLinEntropy",
+      "threshold": {
+        "min": 0.99,
+        "max": null
+      },
+      "actual": {
+        "value": 1.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_type_numeric_all__col=CvsLogEntropy",
+      "type": "type",
+      "column": "CvsLogEntropy",
+      "threshold": {
+        "min": 0.99,
+        "max": null
+      },
+      "actual": {
+        "value": 1.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_type_numeric_all__col=CvsWEntropy",
+      "type": "type",
+      "column": "CvsWEntropy",
+      "threshold": {
+        "min": 0.99,
+        "max": null
+      },
+      "actual": {
+        "value": 1.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_type_numeric_all__col=LDHH_cbo",
+      "type": "type",
+      "column": "LDHH_cbo",
+      "threshold": {
+        "min": 0.99,
+        "max": null
+      },
+      "actual": {
+        "value": 1.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_type_numeric_all__col=LDHH_dit",
+      "type": "type",
+      "column": "LDHH_dit",
+      "threshold": {
+        "min": 0.99,
+        "max": null
+      },
+      "actual": {
+        "value": 1.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_type_numeric_all__col=LDHH_fanIn",
+      "type": "type",
+      "column": "LDHH_fanIn",
+      "threshold": {
+        "min": 0.99,
+        "max": null
+      },
+      "actual": {
+        "value": 1.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_type_numeric_all__col=LDHH_fanOut",
+      "type": "type",
+      "column": "LDHH_fanOut",
+      "threshold": {
+        "min": 0.99,
+        "max": null
+      },
+      "actual": {
+        "value": 1.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_type_numeric_all__col=LDHH_lcom",
+      "type": "type",
+      "column": "LDHH_lcom",
+      "threshold": {
+        "min": 0.99,
+        "max": null
+      },
+      "actual": {
+        "value": 1.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_type_numeric_all__col=LDHH_noc",
+      "type": "type",
+      "column": "LDHH_noc",
+      "threshold": {
+        "min": 0.99,
+        "max": null
+      },
+      "actual": {
+        "value": 1.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_type_numeric_all__col=LDHH_numberOfAttributes",
+      "type": "type",
+      "column": "LDHH_numberOfAttributes",
+      "threshold": {
+        "min": 0.99,
+        "max": null
+      },
+      "actual": {
+        "value": 1.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_type_numeric_all__col=LDHH_numberOfAttributesInherited",
+      "type": "type",
+      "column": "LDHH_numberOfAttributesInherited",
+      "threshold": {
+        "min": 0.99,
+        "max": null
+      },
+      "actual": {
+        "value": 1.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_type_numeric_all__col=LDHH_numberOfLinesOfCode",
+      "type": "type",
+      "column": "LDHH_numberOfLinesOfCode",
+      "threshold": {
+        "min": 0.99,
+        "max": null
+      },
+      "actual": {
+        "value": 1.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_type_numeric_all__col=LDHH_numberOfMethods",
+      "type": "type",
+      "column": "LDHH_numberOfMethods",
+      "threshold": {
+        "min": 0.99,
+        "max": null
+      },
+      "actual": {
+        "value": 1.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_type_numeric_all__col=LDHH_numberOfMethodsInherited",
+      "type": "type",
+      "column": "LDHH_numberOfMethodsInherited",
+      "threshold": {
+        "min": 0.99,
+        "max": null
+      },
+      "actual": {
+        "value": 1.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_type_numeric_all__col=LDHH_numberOfPrivateAttributes",
+      "type": "type",
+      "column": "LDHH_numberOfPrivateAttributes",
+      "threshold": {
+        "min": 0.99,
+        "max": null
+      },
+      "actual": {
+        "value": 1.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_type_numeric_all__col=LDHH_numberOfPrivateMethods",
+      "type": "type",
+      "column": "LDHH_numberOfPrivateMethods",
+      "threshold": {
+        "min": 0.99,
+        "max": null
+      },
+      "actual": {
+        "value": 1.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_type_numeric_all__col=LDHH_numberOfPublicAttributes",
+      "type": "type",
+      "column": "LDHH_numberOfPublicAttributes",
+      "threshold": {
+        "min": 0.99,
+        "max": null
+      },
+      "actual": {
+        "value": 1.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_type_numeric_all__col=LDHH_numberOfPublicMethods",
+      "type": "type",
+      "column": "LDHH_numberOfPublicMethods",
+      "threshold": {
+        "min": 0.99,
+        "max": null
+      },
+      "actual": {
+        "value": 1.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_type_numeric_all__col=LDHH_rfc",
+      "type": "type",
+      "column": "LDHH_rfc",
+      "threshold": {
+        "min": 0.99,
+        "max": null
+      },
+      "actual": {
+        "value": 1.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_type_numeric_all__col=LDHH_wmc",
+      "type": "type",
+      "column": "LDHH_wmc",
+      "threshold": {
+        "min": 0.99,
+        "max": null
+      },
+      "actual": {
+        "value": 1.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_type_numeric_all__col=WCHU_cbo",
+      "type": "type",
+      "column": "WCHU_cbo",
+      "threshold": {
+        "min": 0.99,
+        "max": null
+      },
+      "actual": {
+        "value": 1.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_type_numeric_all__col=WCHU_dit",
+      "type": "type",
+      "column": "WCHU_dit",
+      "threshold": {
+        "min": 0.99,
+        "max": null
+      },
+      "actual": {
+        "value": 1.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_type_numeric_all__col=WCHU_fanIn",
+      "type": "type",
+      "column": "WCHU_fanIn",
+      "threshold": {
+        "min": 0.99,
+        "max": null
+      },
+      "actual": {
+        "value": 1.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_type_numeric_all__col=WCHU_fanOut",
+      "type": "type",
+      "column": "WCHU_fanOut",
+      "threshold": {
+        "min": 0.99,
+        "max": null
+      },
+      "actual": {
+        "value": 1.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_type_numeric_all__col=WCHU_lcom",
+      "type": "type",
+      "column": "WCHU_lcom",
+      "threshold": {
+        "min": 0.99,
+        "max": null
+      },
+      "actual": {
+        "value": 1.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_type_numeric_all__col=WCHU_noc",
+      "type": "type",
+      "column": "WCHU_noc",
+      "threshold": {
+        "min": 0.99,
+        "max": null
+      },
+      "actual": {
+        "value": 1.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_type_numeric_all__col=WCHU_numberOfAttributes",
+      "type": "type",
+      "column": "WCHU_numberOfAttributes",
+      "threshold": {
+        "min": 0.99,
+        "max": null
+      },
+      "actual": {
+        "value": 1.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_type_numeric_all__col=WCHU_numberOfAttributesInherited",
+      "type": "type",
+      "column": "WCHU_numberOfAttributesInherited",
+      "threshold": {
+        "min": 0.99,
+        "max": null
+      },
+      "actual": {
+        "value": 1.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_type_numeric_all__col=WCHU_numberOfLinesOfCode",
+      "type": "type",
+      "column": "WCHU_numberOfLinesOfCode",
+      "threshold": {
+        "min": 0.99,
+        "max": null
+      },
+      "actual": {
+        "value": 1.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_type_numeric_all__col=WCHU_numberOfMethods",
+      "type": "type",
+      "column": "WCHU_numberOfMethods",
+      "threshold": {
+        "min": 0.99,
+        "max": null
+      },
+      "actual": {
+        "value": 1.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_type_numeric_all__col=WCHU_numberOfMethodsInherited",
+      "type": "type",
+      "column": "WCHU_numberOfMethodsInherited",
+      "threshold": {
+        "min": 0.99,
+        "max": null
+      },
+      "actual": {
+        "value": 1.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_type_numeric_all__col=WCHU_numberOfPrivateAttributes",
+      "type": "type",
+      "column": "WCHU_numberOfPrivateAttributes",
+      "threshold": {
+        "min": 0.99,
+        "max": null
+      },
+      "actual": {
+        "value": 1.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_type_numeric_all__col=WCHU_numberOfPrivateMethods",
+      "type": "type",
+      "column": "WCHU_numberOfPrivateMethods",
+      "threshold": {
+        "min": 0.99,
+        "max": null
+      },
+      "actual": {
+        "value": 1.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_type_numeric_all__col=WCHU_numberOfPublicAttributes",
+      "type": "type",
+      "column": "WCHU_numberOfPublicAttributes",
+      "threshold": {
+        "min": 0.99,
+        "max": null
+      },
+      "actual": {
+        "value": 1.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_type_numeric_all__col=WCHU_numberOfPublicMethods",
+      "type": "type",
+      "column": "WCHU_numberOfPublicMethods",
+      "threshold": {
+        "min": 0.99,
+        "max": null
+      },
+      "actual": {
+        "value": 1.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_type_numeric_all__col=WCHU_rfc",
+      "type": "type",
+      "column": "WCHU_rfc",
+      "threshold": {
+        "min": 0.99,
+        "max": null
+      },
+      "actual": {
+        "value": 1.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_type_numeric_all__col=WCHU_wmc",
+      "type": "type",
+      "column": "WCHU_wmc",
+      "threshold": {
+        "min": 0.99,
+        "max": null
+      },
+      "actual": {
+        "value": 1.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_type_numeric_all__col=ck_oo_cbo",
+      "type": "type",
+      "column": "ck_oo_cbo",
+      "threshold": {
+        "min": 0.99,
+        "max": null
+      },
+      "actual": {
+        "value": 1.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_type_numeric_all__col=ck_oo_dit",
+      "type": "type",
+      "column": "ck_oo_dit",
+      "threshold": {
+        "min": 0.99,
+        "max": null
+      },
+      "actual": {
+        "value": 1.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_type_numeric_all__col=ck_oo_fanIn",
+      "type": "type",
+      "column": "ck_oo_fanIn",
+      "threshold": {
+        "min": 0.99,
+        "max": null
+      },
+      "actual": {
+        "value": 1.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_type_numeric_all__col=ck_oo_fanOut",
+      "type": "type",
+      "column": "ck_oo_fanOut",
+      "threshold": {
+        "min": 0.99,
+        "max": null
+      },
+      "actual": {
+        "value": 1.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_type_numeric_all__col=ck_oo_lcom",
+      "type": "type",
+      "column": "ck_oo_lcom",
+      "threshold": {
+        "min": 0.99,
+        "max": null
+      },
+      "actual": {
+        "value": 1.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_type_numeric_all__col=ck_oo_noc",
+      "type": "type",
+      "column": "ck_oo_noc",
+      "threshold": {
+        "min": 0.99,
+        "max": null
+      },
+      "actual": {
+        "value": 1.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_type_numeric_all__col=ck_oo_numberOfAttributes",
+      "type": "type",
+      "column": "ck_oo_numberOfAttributes",
+      "threshold": {
+        "min": 0.99,
+        "max": null
+      },
+      "actual": {
+        "value": 1.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_type_numeric_all__col=ck_oo_numberOfAttributesInherited",
+      "type": "type",
+      "column": "ck_oo_numberOfAttributesInherited",
+      "threshold": {
+        "min": 0.99,
+        "max": null
+      },
+      "actual": {
+        "value": 1.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_type_numeric_all__col=ck_oo_numberOfLinesOfCode",
+      "type": "type",
+      "column": "ck_oo_numberOfLinesOfCode",
+      "threshold": {
+        "min": 0.99,
+        "max": null
+      },
+      "actual": {
+        "value": 1.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_type_numeric_all__col=ck_oo_numberOfMethods",
+      "type": "type",
+      "column": "ck_oo_numberOfMethods",
+      "threshold": {
+        "min": 0.99,
+        "max": null
+      },
+      "actual": {
+        "value": 1.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_type_numeric_all__col=ck_oo_numberOfMethodsInherited",
+      "type": "type",
+      "column": "ck_oo_numberOfMethodsInherited",
+      "threshold": {
+        "min": 0.99,
+        "max": null
+      },
+      "actual": {
+        "value": 1.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_type_numeric_all__col=ck_oo_numberOfPrivateAttributes",
+      "type": "type",
+      "column": "ck_oo_numberOfPrivateAttributes",
+      "threshold": {
+        "min": 0.99,
+        "max": null
+      },
+      "actual": {
+        "value": 1.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_type_numeric_all__col=ck_oo_numberOfPrivateMethods",
+      "type": "type",
+      "column": "ck_oo_numberOfPrivateMethods",
+      "threshold": {
+        "min": 0.99,
+        "max": null
+      },
+      "actual": {
+        "value": 1.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_type_numeric_all__col=ck_oo_numberOfPublicAttributes",
+      "type": "type",
+      "column": "ck_oo_numberOfPublicAttributes",
+      "threshold": {
+        "min": 0.99,
+        "max": null
+      },
+      "actual": {
+        "value": 1.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_type_numeric_all__col=ck_oo_numberOfPublicMethods",
+      "type": "type",
+      "column": "ck_oo_numberOfPublicMethods",
+      "threshold": {
+        "min": 0.99,
+        "max": null
+      },
+      "actual": {
+        "value": 1.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_type_numeric_all__col=ck_oo_rfc",
+      "type": "type",
+      "column": "ck_oo_rfc",
+      "threshold": {
+        "min": 0.99,
+        "max": null
+      },
+      "actual": {
+        "value": 1.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_type_numeric_all__col=ck_oo_wmc",
+      "type": "type",
+      "column": "ck_oo_wmc",
+      "threshold": {
+        "min": 0.99,
+        "max": null
+      },
+      "actual": {
+        "value": 1.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_type_numeric_all__col=numberOfBugsFoundUntil:",
+      "type": "type",
+      "column": "numberOfBugsFoundUntil:",
+      "threshold": {
+        "min": 0.99,
+        "max": null
+      },
+      "actual": {
+        "value": 1.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_type_numeric_all__col=numberOfCriticalBugsFoundUntil:",
+      "type": "type",
+      "column": "numberOfCriticalBugsFoundUntil:",
+      "threshold": {
+        "min": 0.99,
+        "max": null
+      },
+      "actual": {
+        "value": 1.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_type_numeric_all__col=numberOfHighPriorityBugsFoundUntil:",
+      "type": "type",
+      "column": "numberOfHighPriorityBugsFoundUntil:",
+      "threshold": {
+        "min": 0.99,
+        "max": null
+      },
+      "actual": {
+        "value": 1.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_type_numeric_all__col=numberOfMajorBugsFoundUntil:",
+      "type": "type",
+      "column": "numberOfMajorBugsFoundUntil:",
+      "threshold": {
+        "min": 0.99,
+        "max": null
+      },
+      "actual": {
+        "value": 1.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_type_numeric_all__col=numberOfNonTrivialBugsFoundUntil:",
+      "type": "type",
+      "column": "numberOfNonTrivialBugsFoundUntil:",
+      "threshold": {
+        "min": 0.99,
+        "max": null
+      },
+      "actual": {
+        "value": 1.0
+      },
+      "pass": true,
+      "violation_rate": 0.0,
+      "severity": "medium",
+      "score": 0.0,
+      "message": ""
+    },
+    {
+      "id": "R_outlier_iqr_numeric_all__col=CvsEntropy",
+      "type": "outlier",
+      "column": "CvsEntropy",
+      "threshold": {
+        "min": null,
+        "max": 0.2,
+        "method": "iqr",
+        "sample_n": 5,
+        "iqr_k": 1.5
+      },
+      "actual": {
+        "value": 0.046296296296296294
+      },
+      "pass": true,
+      "violation_rate": 0.046296296296296294,
+      "severity": "medium",
+      "score": 0.4629629629629629,
+      "message": "",
+      "samples": [
+        {
+          "row": 1,
+          "value": 38.2812
+        },
+        {
+          "row": 3,
+          "value": 27.5814
+        },
+        {
+          "row": 8,
+          "value": 19.6679
+        },
+        {
+          "row": 18,
+          "value": 19.4467
+        },
+        {
+          "row": 29,
+          "value": 20.7622
+        }
+      ]
+    },
+    {
+      "id": "R_outlier_iqr_numeric_all__col=CvsExpEntropy",
+      "type": "outlier",
+      "column": "CvsExpEntropy",
+      "threshold": {
+        "min": null,
+        "max": 0.2,
+        "method": "iqr",
+        "sample_n": 5,
+        "iqr_k": 1.5
+      },
+      "actual": {
+        "value": 0.043209876543209874
+      },
+      "pass": true,
+      "violation_rate": 0.043209876543209874,
+      "severity": "medium",
+      "score": 0.43209876543209874,
+      "message": "",
+      "samples": [
+        {
+          "row": 1,
+          "value": 0.328692
+        },
+        {
+          "row": 3,
+          "value": 0.170416
+        },
+        {
+          "row": 64,
+          "value": 0.221266
+        },
+        {
+          "row": 85,
+          "value": 0.199519
+        },
+        {
+          "row": 131,
+          "value": 0.152795
+        }
+      ]
+    },
+    {
+      "id": "R_outlier_iqr_numeric_all__col=CvsLinEntropy",
+      "type": "outlier",
+      "column": "CvsLinEntropy",
+      "threshold": {
+        "min": null,
+        "max": 0.2,
+        "method": "iqr",
+        "sample_n": 5,
+        "iqr_k": 1.5
+      },
+      "actual": {
+        "value": 0.040123456790123455
+      },
+      "pass": true,
+      "violation_rate": 0.040123456790123455,
+      "severity": "medium",
+      "score": 0.4012345679012346,
+      "message": "",
+      "samples": [
+        {
+          "row": 1,
+          "value": 0.149026
+        },
+        {
+          "row": 3,
+          "value": 0.080838
+        },
+        {
+          "row": 64,
+          "value": 0.107839
+        },
+        {
+          "row": 85,
+          "value": 0.073693
+        },
+        {
+          "row": 108,
+          "value": 0.074612
+        }
+      ]
+    },
+    {
+      "id": "R_outlier_iqr_numeric_all__col=CvsLogEntropy",
+      "type": "outlier",
+      "column": "CvsLogEntropy",
+      "threshold": {
+        "min": null,
+        "max": 0.2,
+        "method": "iqr",
+        "sample_n": 5,
+        "iqr_k": 1.5
+      },
+      "actual": {
+        "value": 0.040123456790123455
+      },
+      "pass": true,
+      "violation_rate": 0.040123456790123455,
+      "severity": "medium",
+      "score": 0.4012345679012346,
+      "message": "",
+      "samples": [
+        {
+          "row": 1,
+          "value": 1.12823
+        },
+        {
+          "row": 3,
+          "value": 0.756585
+        },
+        {
+          "row": 29,
+          "value": 0.538207
+        },
+        {
+          "row": 41,
+          "value": 0.566668
+        },
+        {
+          "row": 64,
+          "value": 0.993943
+        }
+      ]
+    },
+    {
+      "id": "R_outlier_iqr_numeric_all__col=CvsWEntropy",
+      "type": "outlier",
+      "column": "CvsWEntropy",
+      "threshold": {
+        "min": null,
+        "max": 0.2,
+        "method": "iqr",
+        "sample_n": 5,
+        "iqr_k": 1.5
+      },
+      "actual": {
+        "value": 0.12345679012345678
+      },
+      "pass": true,
+      "violation_rate": 0.12345679012345678,
+      "severity": "medium",
+      "score": 1.2345679012345678,
+      "message": "",
+      "samples": [
+        {
+          "row": 0,
+          "value": 0.393707
+        },
+        {
+          "row": 1,
+          "value": 2.09375
+        },
+        {
+          "row": 2,
+          "value": 0.484675
+        },
+        {
+          "row": 3,
+          "value": 0.811584
+        },
+        {
+          "row": 6,
+          "value": 0.748927
+        }
+      ]
+    },
+    {
+      "id": "R_outlier_iqr_numeric_all__col=LDHH_cbo",
+      "type": "outlier",
+      "column": "LDHH_cbo",
+      "threshold": {
+        "min": null,
+        "max": 0.2,
+        "method": "iqr",
+        "sample_n": 5,
+        "iqr_k": 1.5
+      },
+      "actual": {
+        "value": 0.08641975308641975
+      },
+      "pass": true,
+      "violation_rate": 0.08641975308641975,
+      "severity": "medium",
+      "score": 0.8641975308641975,
+      "message": "",
+      "samples": [
+        {
+          "row": 1,
+          "value": 0.021602
+        },
+        {
+          "row": 3,
+          "value": 0.020478
+        },
+        {
+          "row": 32,
+          "value": 0.015399
+        },
+        {
+          "row": 57,
+          "value": 0.015573
+        },
+        {
+          "row": 64,
+          "value": 0.033619
+        }
+      ]
+    },
+    {
+      "id": "R_outlier_iqr_numeric_all__col=LDHH_dit",
+      "type": "outlier",
+      "column": "LDHH_dit",
+      "threshold": {
+        "min": null,
+        "max": 0.2,
+        "method": "iqr",
+        "sample_n": 5,
+        "iqr_k": 1.5
+      },
+      "actual": {
+        "value": 0.037037037037037035
+      },
+      "pass": true,
+      "violation_rate": 0.037037037037037035,
+      "severity": "medium",
+      "score": 0.37037037037037035,
+      "message": "",
+      "samples": [
+        {
+          "row": 16,
+          "value": 0.000287
+        },
+        {
+          "row": 62,
+          "value": 0.000287
+        },
+        {
+          "row": 63,
+          "value": 0.000364
+        },
+        {
+          "row": 76,
+          "value": 0.000364
+        },
+        {
+          "row": 113,
+          "value": 0.00022
+        }
+      ]
+    },
+    {
+      "id": "R_outlier_iqr_numeric_all__col=LDHH_fanIn",
+      "type": "outlier",
+      "column": "LDHH_fanIn",
+      "threshold": {
+        "min": null,
+        "max": 0.2,
+        "method": "iqr",
+        "sample_n": 5,
+        "iqr_k": 1.5
+      },
+      "actual": {
+        "value": 0.14506172839506173
+      },
+      "pass": true,
+      "violation_rate": 0.14506172839506173,
+      "severity": "medium",
+      "score": 1.4506172839506173,
+      "message": "",
+      "samples": [
+        {
+          "row": 1,
+          "value": 0.004756
+        },
+        {
+          "row": 2,
+          "value": 0.009143
+        },
+        {
+          "row": 3,
+          "value": 0.005395
+        },
+        {
+          "row": 9,
+          "value": 0.003493
+        },
+        {
+          "row": 32,
+          "value": 0.004039
+        }
+      ]
+    },
+    {
+      "id": "R_outlier_iqr_numeric_all__col=LDHH_fanOut",
+      "type": "outlier",
+      "column": "LDHH_fanOut",
+      "threshold": {
+        "min": null,
+        "max": 0.2,
+        "method": "iqr",
+        "sample_n": 5,
+        "iqr_k": 1.5
+      },
+      "actual": {
+        "value": 0.12345679012345678
+      },
+      "pass": true,
+      "violation_rate": 0.12345679012345678,
+      "severity": "medium",
+      "score": 1.2345679012345678,
+      "message": "",
+      "samples": [
+        {
+          "row": 1,
+          "value": 0.018761
+        },
+        {
+          "row": 3,
+          "value": 0.020376
+        },
+        {
+          "row": 6,
+          "value": 0.008318
+        },
+        {
+          "row": 8,
+          "value": 0.011728
+        },
+        {
+          "row": 18,
+          "value": 0.007979
+        }
+      ]
+    },
+    {
+      "id": "R_outlier_iqr_numeric_all__col=LDHH_lcom",
+      "type": "outlier",
+      "column": "LDHH_lcom",
+      "threshold": {
+        "min": null,
+        "max": 0.2,
+        "method": "iqr",
+        "sample_n": 5,
+        "iqr_k": 1.5
+      },
+      "actual": {
+        "value": 0.13580246913580246
+      },
+      "pass": true,
+      "violation_rate": 0.13580246913580246,
+      "severity": "medium",
+      "score": 1.3580246913580245,
+      "message": "",
+      "samples": [
+        {
+          "row": 0,
+          "value": 0.002547
+        },
+        {
+          "row": 1,
+          "value": 0.008643
+        },
+        {
+          "row": 3,
+          "value": 0.005642
+        },
+        {
+          "row": 8,
+          "value": 0.014309
+        },
+        {
+          "row": 9,
+          "value": 0.002488
+        }
+      ]
+    },
+    {
+      "id": "R_outlier_iqr_numeric_all__col=LDHH_noc",
+      "type": "outlier",
+      "column": "LDHH_noc",
+      "threshold": {
+        "min": null,
+        "max": 0.2,
+        "method": "iqr",
+        "sample_n": 5,
+        "iqr_k": 1.5
+      },
+      "actual": {
+        "value": 0.018518518518518517
+      },
+      "pass": true,
+      "violation_rate": 0.018518518518518517,
+      "severity": "medium",
+      "score": 0.18518518518518517,
+      "message": "",
+      "samples": [
+        {
+          "row": 10,
+          "value": 0.001069
+        },
+        {
+          "row": 42,
+          "value": 0.000718
+        },
+        {
+          "row": 126,
+          "value": 0.000718
+        },
+        {
+          "row": 177,
+          "value": 0.001069
+        },
+        {
+          "row": 274,
+          "value": 0.005831
+        }
+      ]
+    },
+    {
+      "id": "R_outlier_iqr_numeric_all__col=LDHH_numberOfAttributes",
+      "type": "outlier",
+      "column": "LDHH_numberOfAttributes",
+      "threshold": {
+        "min": null,
+        "max": 0.2,
+        "method": "iqr",
+        "sample_n": 5,
+        "iqr_k": 1.5
+      },
+      "actual": {
+        "value": 0.13580246913580246
+      },
+      "pass": true,
+      "violation_rate": 0.13580246913580246,
+      "severity": "medium",
+      "score": 1.3580246913580245,
+      "message": "",
+      "samples": [
+        {
+          "row": 0,
+          "value": 0.004425
+        },
+        {
+          "row": 1,
+          "value": 0.015698
+        },
+        {
+          "row": 2,
+          "value": 0.002373
+        },
+        {
+          "row": 6,
+          "value": 0.00262
+        },
+        {
+          "row": 14,
+          "value": 0.017758
+        }
+      ]
+    },
+    {
+      "id": "R_outlier_iqr_numeric_all__col=LDHH_numberOfAttributesInherited",
+      "type": "outlier",
+      "column": "LDHH_numberOfAttributesInherited",
+      "threshold": {
+        "min": null,
+        "max": 0.2,
+        "method": "iqr",
+        "sample_n": 5,
+        "iqr_k": 1.5
+      },
+      "actual": {
+        "value": 0.10802469135802469
+      },
+      "pass": true,
+      "violation_rate": 0.10802469135802469,
+      "severity": "medium",
+      "score": 1.0802469135802468,
+      "message": "",
+      "samples": [
+        {
+          "row": 11,
+          "value": 0.000966
+        },
+        {
+          "row": 14,
+          "value": 0.002083
+        },
+        {
+          "row": 16,
+          "value": 0.000814
+        },
+        {
+          "row": 18,
+          "value": 0.003134
+        },
+        {
+          "row": 44,
+          "value": 0.000814
+        }
+      ]
+    },
+    {
+      "id": "R_outlier_iqr_numeric_all__col=LDHH_numberOfLinesOfCode",
+      "type": "outlier",
+      "column": "LDHH_numberOfLinesOfCode",
+      "threshold": {
+        "min": null,
+        "max": 0.2,
+        "method": "iqr",
+        "sample_n": 5,
+        "iqr_k": 1.5
+      },
+      "actual": {
+        "value": 0.16666666666666666
+      },
+      "pass": true,
+      "violation_rate": 0.16666666666666666,
+      "severity": "medium",
+      "score": 1.6666666666666665,
+      "message": "",
+      "samples": [
+        {
+          "row": 1,
+          "value": 0.061578
+        },
+        {
+          "row": 3,
+          "value": 0.034402
+        },
+        {
+          "row": 6,
+          "value": 0.00876
+        },
+        {
+          "row": 8,
+          "value": 0.02181
+        },
+        {
+          "row": 18,
+          "value": 0.018578
+        }
+      ]
+    },
+    {
+      "id": "R_outlier_iqr_numeric_all__col=LDHH_numberOfMethods",
+      "type": "outlier",
+      "column": "LDHH_numberOfMethods",
+      "threshold": {
+        "min": null,
+        "max": 0.2,
+        "method": "iqr",
+        "sample_n": 5,
+        "iqr_k": 1.5
+      },
+      "actual": {
+        "value": 0.16358024691358025
+      },
+      "pass": true,
+      "violation_rate": 0.16358024691358025,
+      "severity": "medium",
+      "score": 1.6358024691358026,
+      "message": "",
+      "samples": [
+        {
+          "row": 0,
+          "value": 0.003611
+        },
+        {
+          "row": 1,
+          "value": 0.009906
+        },
+        {
+          "row": 3,
+          "value": 0.007
+        },
+        {
+          "row": 8,
+          "value": 0.015668
+        },
+        {
+          "row": 9,
+          "value": 0.00273
+        }
+      ]
+    },
+    {
+      "id": "R_outlier_iqr_numeric_all__col=LDHH_numberOfMethodsInherited",
+      "type": "outlier",
+      "column": "LDHH_numberOfMethodsInherited",
+      "threshold": {
+        "min": null,
+        "max": 0.2,
+        "method": "iqr",
+        "sample_n": 5,
+        "iqr_k": 1.5
+      },
+      "actual": {
+        "value": 0.05864197530864197
+      },
+      "pass": true,
+      "violation_rate": 0.05864197530864197,
+      "severity": "medium",
+      "score": 0.5864197530864197,
+      "message": "",
+      "samples": [
+        {
+          "row": 11,
+          "value": 0.019677
+        },
+        {
+          "row": 25,
+          "value": 0.007778
+        },
+        {
+          "row": 48,
+          "value": 0.007592
+        },
+        {
+          "row": 59,
+          "value": 0.005594
+        },
+        {
+          "row": 108,
+          "value": 0.007122
+        }
+      ]
+    },
+    {
+      "id": "R_outlier_iqr_numeric_all__col=LDHH_numberOfPrivateAttributes",
+      "type": "outlier",
+      "column": "LDHH_numberOfPrivateAttributes",
+      "threshold": {
+        "min": null,
+        "max": 0.2,
+        "method": "iqr",
+        "sample_n": 5,
+        "iqr_k": 1.5
+      },
+      "actual": {
+        "value": 0.14814814814814814
+      },
+      "pass": true,
+      "violation_rate": 0.14814814814814814,
+      "severity": "medium",
+      "score": 1.4814814814814814,
+      "message": "",
+      "samples": [
+        {
+          "row": 0,
+          "value": 0.004091
+        },
+        {
+          "row": 1,
+          "value": 0.015332
+        },
+        {
+          "row": 2,
+          "value": 0.001953
+        },
+        {
+          "row": 6,
+          "value": 0.002712
+        },
+        {
+          "row": 10,
+          "value": 0.006087
+        }
+      ]
+    },
+    {
+      "id": "R_outlier_iqr_numeric_all__col=LDHH_numberOfPrivateMethods",
+      "type": "outlier",
+      "column": "LDHH_numberOfPrivateMethods",
+      "threshold": {
+        "min": null,
+        "max": 0.2,
+        "method": "iqr",
+        "sample_n": 5,
+        "iqr_k": 1.5
+      },
+      "actual": {
+        "value": 0.18209876543209877
+      },
+      "pass": true,
+      "violation_rate": 0.18209876543209877,
+      "severity": "medium",
+      "score": 1.8209876543209877,
+      "message": "",
+      "samples": [
+        {
+          "row": 1,
+          "value": 0.010354
+        },
+        {
+          "row": 2,
+          "value": 0.001951
+        },
+        {
+          "row": 3,
+          "value": 0.004355
+        },
+        {
+          "row": 4,
+          "value": 0.000577
+        },
+        {
+          "row": 8,
+          "value": 0.01494
+        }
+      ]
+    },
+    {
+      "id": "R_outlier_iqr_numeric_all__col=LDHH_numberOfPublicAttributes",
+      "type": "outlier",
+      "column": "LDHH_numberOfPublicAttributes",
+      "threshold": {
+        "min": null,
+        "max": 0.2,
+        "method": "iqr",
+        "sample_n": 5,
+        "iqr_k": 1.5
+      },
+      "actual": {
+        "value": 0.10802469135802469
+      },
+      "pass": true,
+      "violation_rate": 0.10802469135802469,
+      "severity": "medium",
+      "score": 1.0802469135802468,
+      "message": "",
+      "samples": [
+        {
+          "row": 2,
+          "value": 0.00026
+        },
+        {
+          "row": 4,
+          "value": 0.000402
+        },
+        {
+          "row": 8,
+          "value": 0.001366
+        },
+        {
+          "row": 10,
+          "value": 0.006808
+        },
+        {
+          "row": 14,
+          "value": 0.01632
+        }
+      ]
+    },
+    {
+      "id": "R_outlier_iqr_numeric_all__col=LDHH_numberOfPublicMethods",
+      "type": "outlier",
+      "column": "LDHH_numberOfPublicMethods",
+      "threshold": {
+        "min": null,
+        "max": 0.2,
+        "method": "iqr",
+        "sample_n": 5,
+        "iqr_k": 1.5
+      },
+      "actual": {
+        "value": 0.14506172839506173
+      },
+      "pass": true,
+      "violation_rate": 0.14506172839506173,
+      "severity": "medium",
+      "score": 1.4506172839506173,
+      "message": "",
+      "samples": [
+        {
+          "row": 0,
+          "value": 0.003049
+        },
+        {
+          "row": 1,
+          "value": 0.001481
+        },
+        {
+          "row": 9,
+          "value": 0.002408
+        },
+        {
+          "row": 11,
+          "value": 0.001705
+        },
+        {
+          "row": 16,
+          "value": 0.00115
+        }
+      ]
+    },
+    {
+      "id": "R_outlier_iqr_numeric_all__col=LDHH_rfc",
+      "type": "outlier",
+      "column": "LDHH_rfc",
+      "threshold": {
+        "min": null,
+        "max": 0.2,
+        "method": "iqr",
+        "sample_n": 5,
+        "iqr_k": 1.5
+      },
+      "actual": {
+        "value": 0.15123456790123457
+      },
+      "pass": true,
+      "violation_rate": 0.15123456790123457,
+      "severity": "medium",
+      "score": 1.5123456790123457,
+      "message": "",
+      "samples": [
+        {
+          "row": 1,
+          "value": 0.060301
+        },
+        {
+          "row": 3,
+          "value": 0.030608
+        },
+        {
+          "row": 8,
+          "value": 0.019341
+        },
+        {
+          "row": 18,
+          "value": 0.017204
+        },
+        {
+          "row": 21,
+          "value": 0.009818
+        }
+      ]
+    },
+    {
+      "id": "R_outlier_iqr_numeric_all__col=LDHH_wmc",
+      "type": "outlier",
+      "column": "LDHH_wmc",
+      "threshold": {
+        "min": null,
+        "max": 0.2,
+        "method": "iqr",
+        "sample_n": 5,
+        "iqr_k": 1.5
+      },
+      "actual": {
+        "value": 0.16049382716049382
+      },
+      "pass": true,
+      "violation_rate": 0.16049382716049382,
+      "severity": "medium",
+      "score": 1.6049382716049383,
+      "message": "",
+      "samples": [
+        {
+          "row": 1,
+          "value": 0.041329
+        },
+        {
+          "row": 3,
+          "value": 0.028494
+        },
+        {
+          "row": 6,
+          "value": 0.008936
+        },
+        {
+          "row": 8,
+          "value": 0.019782
+        },
+        {
+          "row": 16,
+          "value": 0.006468
+        }
+      ]
+    },
+    {
+      "id": "R_outlier_iqr_numeric_all__col=WCHU_cbo",
+      "type": "outlier",
+      "column": "WCHU_cbo",
+      "threshold": {
+        "min": null,
+        "max": 0.2,
+        "method": "iqr",
+        "sample_n": 5,
+        "iqr_k": 1.5
+      },
+      "actual": {
+        "value": 0.06790123456790123
+      },
+      "pass": true,
+      "violation_rate": 0.06790123456790123,
+      "severity": "medium",
+      "score": 0.6790123456790123,
+      "message": "",
+      "samples": [
+        {
+          "row": 1,
+          "value": 16.31
+        },
+        {
+          "row": 2,
+          "value": 8.28
+        },
+        {
+          "row": 3,
+          "value": 11.13
+        },
+        {
+          "row": 8,
+          "value": 10.25
+        },
+        {
+          "row": 29,
+          "value": 9.14
+        }
+      ]
+    },
+    {
+      "id": "R_outlier_iqr_numeric_all__col=WCHU_dit",
+      "type": "outlier",
+      "column": "WCHU_dit",
+      "threshold": {
+        "min": null,
+        "max": 0.2,
+        "method": "iqr",
+        "sample_n": 5,
+        "iqr_k": 1.5
+      },
+      "actual": {
+        "value": 0.05246913580246913
+      },
+      "pass": true,
+      "violation_rate": 0.05246913580246913,
+      "severity": "medium",
+      "score": 0.5246913580246914,
+      "message": "",
+      "samples": [
+        {
+          "row": 16,
+          "value": 1.01
+        },
+        {
+          "row": 29,
+          "value": 1.02
+        },
+        {
+          "row": 62,
+          "value": 1.01
+        },
+        {
+          "row": 63,
+          "value": 1.01
+        },
+        {
+          "row": 65,
+          "value": 1.01
+        }
+      ]
+    },
+    {
+      "id": "R_outlier_iqr_numeric_all__col=WCHU_fanIn",
+      "type": "outlier",
+      "column": "WCHU_fanIn",
+      "threshold": {
+        "min": null,
+        "max": 0.2,
+        "method": "iqr",
+        "sample_n": 5,
+        "iqr_k": 1.5
+      },
+      "actual": {
+        "value": 0.11419753086419752
+      },
+      "pass": true,
+      "violation_rate": 0.11419753086419752,
+      "severity": "medium",
+      "score": 1.1419753086419753,
+      "message": "",
+      "samples": [
+        {
+          "row": 2,
+          "value": 6.17
+        },
+        {
+          "row": 3,
+          "value": 6.07
+        },
+        {
+          "row": 32,
+          "value": 3.03
+        },
+        {
+          "row": 36,
+          "value": 3.04
+        },
+        {
+          "row": 42,
+          "value": 3.06
+        }
+      ]
+    },
+    {
+      "id": "R_outlier_iqr_numeric_all__col=WCHU_fanOut",
+      "type": "outlier",
+      "column": "WCHU_fanOut",
+      "threshold": {
+        "min": null,
+        "max": 0.2,
+        "method": "iqr",
+        "sample_n": 5,
+        "iqr_k": 1.5
+      },
+      "actual": {
+        "value": 0.07716049382716049
+      },
+      "pass": true,
+      "violation_rate": 0.07716049382716049,
+      "severity": "medium",
+      "score": 0.7716049382716049,
+      "message": "",
+      "samples": [
+        {
+          "row": 1,
+          "value": 16.3
+        },
+        {
+          "row": 3,
+          "value": 10.13
+        },
+        {
+          "row": 8,
+          "value": 10.25
+        },
+        {
+          "row": 16,
+          "value": 5.12
+        },
+        {
+          "row": 18,
+          "value": 6.14
+        }
+      ]
+    },
+    {
+      "id": "R_outlier_iqr_numeric_all__col=WCHU_lcom",
+      "type": "outlier",
+      "column": "WCHU_lcom",
+      "threshold": {
+        "min": null,
+        "max": 0.2,
+        "method": "iqr",
+        "sample_n": 5,
+        "iqr_k": 1.5
+      },
+      "actual": {
+        "value": 0.14506172839506173
+      },
+      "pass": true,
+      "violation_rate": 0.14506172839506173,
+      "severity": "medium",
+      "score": 1.4506172839506173,
+      "message": "",
+      "samples": [
+        {
+          "row": 1,
+          "value": 23.21
+        },
+        {
+          "row": 3,
+          "value": 8.87
+        },
+        {
+          "row": 8,
+          "value": 12.51
+        },
+        {
+          "row": 11,
+          "value": 3.31
+        },
+        {
+          "row": 16,
+          "value": 3.2
+        }
+      ]
+    },
+    {
+      "id": "R_outlier_iqr_numeric_all__col=WCHU_noc",
+      "type": "outlier",
+      "column": "WCHU_noc",
+      "threshold": {
+        "min": null,
+        "max": 0.2,
+        "method": "iqr",
+        "sample_n": 5,
+        "iqr_k": 1.5
+      },
+      "actual": {
+        "value": 0.037037037037037035
+      },
+      "pass": true,
+      "violation_rate": 0.037037037037037035,
+      "severity": "medium",
+      "score": 0.37037037037037035,
+      "message": "",
+      "samples": [
+        {
+          "row": 2,
+          "value": 2.06
+        },
+        {
+          "row": 10,
+          "value": 1.01
+        },
+        {
+          "row": 36,
+          "value": 2.02
+        },
+        {
+          "row": 42,
+          "value": 1.01
+        },
+        {
+          "row": 88,
+          "value": 1.01
+        }
+      ]
+    },
+    {
+      "id": "R_outlier_iqr_numeric_all__col=WCHU_numberOfAttributes",
+      "type": "outlier",
+      "column": "WCHU_numberOfAttributes",
+      "threshold": {
+        "min": null,
+        "max": 0.2,
+        "method": "iqr",
+        "sample_n": 5,
+        "iqr_k": 1.5
+      },
+      "actual": {
+        "value": 0.09876543209876543
+      },
+      "pass": true,
+      "violation_rate": 0.09876543209876543,
+      "severity": "medium",
+      "score": 0.9876543209876543,
+      "message": "",
+      "samples": [
+        {
+          "row": 0,
+          "value": 3.04
+        },
+        {
+          "row": 1,
+          "value": 14.37
+        },
+        {
+          "row": 2,
+          "value": 3.08
+        },
+        {
+          "row": 8,
+          "value": 3.13
+        },
+        {
+          "row": 14,
+          "value": 6.18
+        }
+      ]
+    },
+    {
+      "id": "R_outlier_iqr_numeric_all__col=WCHU_numberOfAttributesInherited",
+      "type": "outlier",
+      "column": "WCHU_numberOfAttributesInherited",
+      "threshold": {
+        "min": null,
+        "max": 0.2,
+        "method": "iqr",
+        "sample_n": 5,
+        "iqr_k": 1.5
+      },
+      "actual": {
+        "value": 0.11728395061728394
+      },
+      "pass": true,
+      "violation_rate": 0.11728395061728394,
+      "severity": "medium",
+      "score": 1.1728395061728394,
+      "message": "",
+      "samples": [
+        {
+          "row": 6,
+          "value": 4.06
+        },
+        {
+          "row": 11,
+          "value": 1.01
+        },
+        {
+          "row": 14,
+          "value": 1.03
+        },
+        {
+          "row": 16,
+          "value": 1.03
+        },
+        {
+          "row": 18,
+          "value": 2.03
+        }
+      ]
+    },
+    {
+      "id": "R_outlier_iqr_numeric_all__col=WCHU_numberOfLinesOfCode",
+      "type": "outlier",
+      "column": "WCHU_numberOfLinesOfCode",
+      "threshold": {
+        "min": null,
+        "max": 0.2,
+        "method": "iqr",
+        "sample_n": 5,
+        "iqr_k": 1.5
+      },
+      "actual": {
+        "value": 0.09259259259259259
+      },
+      "pass": true,
+      "violation_rate": 0.09259259259259259,
+      "severity": "medium",
+      "score": 0.9259259259259258,
+      "message": "",
+      "samples": [
+        {
+          "row": 1,
+          "value": 43.12
+        },
+        {
+          "row": 3,
+          "value": 24.06
+        },
+        {
+          "row": 8,
+          "value": 22.0
+        },
+        {
+          "row": 16,
+          "value": 8.46
+        },
+        {
+          "row": 18,
+          "value": 17.64
+        }
+      ]
+    },
+    {
+      "id": "R_outlier_iqr_numeric_all__col=WCHU_numberOfMethods",
+      "type": "outlier",
+      "column": "WCHU_numberOfMethods",
+      "threshold": {
+        "min": null,
+        "max": 0.2,
+        "method": "iqr",
+        "sample_n": 5,
+        "iqr_k": 1.5
+      },
+      "actual": {
+        "value": 0.12037037037037036
+      },
+      "pass": true,
+      "violation_rate": 0.12037037037037036,
+      "severity": "medium",
+      "score": 1.2037037037037037,
+      "message": "",
+      "samples": [
+        {
+          "row": 1,
+          "value": 14.23
+        },
+        {
+          "row": 3,
+          "value": 7.08
+        },
+        {
+          "row": 8,
+          "value": 9.23
+        },
+        {
+          "row": 11,
+          "value": 3.05
+        },
+        {
+          "row": 16,
+          "value": 3.05
+        }
+      ]
+    },
+    {
+      "id": "R_outlier_iqr_numeric_all__col=WCHU_numberOfMethodsInherited",
+      "type": "outlier",
+      "column": "WCHU_numberOfMethodsInherited",
+      "threshold": {
+        "min": null,
+        "max": 0.2,
+        "method": "iqr",
+        "sample_n": 5,
+        "iqr_k": 1.5
+      },
+      "actual": {
+        "value": 0.040123456790123455
+      },
+      "pass": true,
+      "violation_rate": 0.040123456790123455,
+      "severity": "medium",
+      "score": 0.4012345679012346,
+      "message": "",
+      "samples": [
+        {
+          "row": 11,
+          "value": 13.4
+        },
+        {
+          "row": 18,
+          "value": 6.07
+        },
+        {
+          "row": 25,
+          "value": 6.08
+        },
+        {
+          "row": 59,
+          "value": 5.11
+        },
+        {
+          "row": 108,
+          "value": 8.18
+        }
+      ]
+    },
+    {
+      "id": "R_outlier_iqr_numeric_all__col=WCHU_numberOfPrivateAttributes",
+      "type": "outlier",
+      "column": "WCHU_numberOfPrivateAttributes",
+      "threshold": {
+        "min": null,
+        "max": 0.2,
+        "method": "iqr",
+        "sample_n": 5,
+        "iqr_k": 1.5
+      },
+      "actual": {
+        "value": 0.06172839506172839
+      },
+      "pass": true,
+      "violation_rate": 0.06172839506172839,
+      "severity": "medium",
+      "score": 0.6172839506172839,
+      "message": "",
+      "samples": [
+        {
+          "row": 0,
+          "value": 3.04
+        },
+        {
+          "row": 1,
+          "value": 11.3
+        },
+        {
+          "row": 16,
+          "value": 4.04
+        },
+        {
+          "row": 29,
+          "value": 3.04
+        },
+        {
+          "row": 32,
+          "value": 3.03
+        }
+      ]
+    },
+    {
+      "id": "R_outlier_iqr_numeric_all__col=WCHU_numberOfPrivateMethods",
+      "type": "outlier",
+      "column": "WCHU_numberOfPrivateMethods",
+      "threshold": {
+        "min": null,
+        "max": 0.2,
+        "method": "iqr",
+        "sample_n": 5,
+        "iqr_k": 1.5
+      },
+      "actual": {
+        "value": 0.20679012345679013
+      },
+      "pass": false,
+      "violation_rate": 0.20679012345679013,
+      "severity": "medium",
+      "score": 2.067901234567901,
+      "message": "above maximum outlier rate",
+      "samples": [
+        {
+          "row": 0,
+          "value": 1.01
+        },
+        {
+          "row": 1,
+          "value": 13.18
+        },
+        {
+          "row": 2,
+          "value": 2.03
+        },
+        {
+          "row": 3,
+          "value": 7.09
+        },
+        {
+          "row": 4,
+          "value": 1.01
+        }
+      ],
+      "violation_rows": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        9,
+        12,
+        15,
+        17,
+        19,
+        30,
+        42,
+        43,
+        45,
+        50,
+        52,
+        56,
+        62,
+        65,
+        66,
+        67,
+        73,
+        76,
+        78,
+        84,
+        87,
+        105,
+        109,
+        110,
+        114,
+        120,
+        124,
+        129,
+        131,
+        134,
+        151,
+        155,
+        169,
+        170,
+        189,
+        193,
+        199,
+        208,
+        210,
+        222,
+        223,
+        224,
+        232,
+        234,
+        241,
+        245,
+        246,
+        248,
+        250,
+        252,
+        253,
+        256,
+        262,
+        279,
+        281,
+        289,
+        293,
+        294,
+        296,
+        297,
+        311
+      ]
+    },
+    {
+      "id": "R_outlier_iqr_numeric_all__col=WCHU_numberOfPublicAttributes",
+      "type": "outlier",
+      "column": "WCHU_numberOfPublicAttributes",
+      "threshold": {
+        "min": null,
+        "max": 0.2,
+        "method": "iqr",
+        "sample_n": 5,
+        "iqr_k": 1.5
+      },
+      "actual": {
+        "value": 0.12654320987654322
+      },
+      "pass": true,
+      "violation_rate": 0.12654320987654322,
+      "severity": "medium",
+      "score": 1.2654320987654322,
+      "message": "",
+      "samples": [
+        {
+          "row": 2,
+          "value": 1.01
+        },
+        {
+          "row": 4,
+          "value": 1.01
+        },
+        {
+          "row": 8,
+          "value": 3.04
+        },
+        {
+          "row": 10,
+          "value": 1.02
+        },
+        {
+          "row": 14,
+          "value": 6.18
+        }
+      ]
+    },
+    {
+      "id": "R_outlier_iqr_numeric_all__col=WCHU_numberOfPublicMethods",
+      "type": "outlier",
+      "column": "WCHU_numberOfPublicMethods",
+      "threshold": {
+        "min": null,
+        "max": 0.2,
+        "method": "iqr",
+        "sample_n": 5,
+        "iqr_k": 1.5
+      },
+      "actual": {
+        "value": 0.06790123456790123
+      },
+      "pass": true,
+      "violation_rate": 0.06790123456790123,
+      "severity": "medium",
+      "score": 0.6790123456790123,
+      "message": "",
+      "samples": [
+        {
+          "row": 1,
+          "value": 3.03
+        },
+        {
+          "row": 11,
+          "value": 3.04
+        },
+        {
+          "row": 18,
+          "value": 5.06
+        },
+        {
+          "row": 29,
+          "value": 5.06
+        },
+        {
+          "row": 75,
+          "value": 3.07
+        }
+      ]
+    },
+    {
+      "id": "R_outlier_iqr_numeric_all__col=WCHU_rfc",
+      "type": "outlier",
+      "column": "WCHU_rfc",
+      "threshold": {
+        "min": null,
+        "max": 0.2,
+        "method": "iqr",
+        "sample_n": 5,
+        "iqr_k": 1.5
+      },
+      "actual": {
+        "value": 0.08024691358024691
+      },
+      "pass": true,
+      "violation_rate": 0.08024691358024691,
+      "severity": "medium",
+      "score": 0.8024691358024691,
+      "message": "",
+      "samples": [
+        {
+          "row": 1,
+          "value": 39.75
+        },
+        {
+          "row": 3,
+          "value": 22.48
+        },
+        {
+          "row": 8,
+          "value": 17.27
+        },
+        {
+          "row": 18,
+          "value": 14.78
+        },
+        {
+          "row": 29,
+          "value": 14.92
+        }
+      ]
+    },
+    {
+      "id": "R_outlier_iqr_numeric_all__col=WCHU_wmc",
+      "type": "outlier",
+      "column": "WCHU_wmc",
+      "threshold": {
+        "min": null,
+        "max": 0.2,
+        "method": "iqr",
+        "sample_n": 5,
+        "iqr_k": 1.5
+      },
+      "actual": {
+        "value": 0.10185185185185185
+      },
+      "pass": true,
+      "violation_rate": 0.10185185185185185,
+      "severity": "medium",
+      "score": 1.0185185185185184,
+      "message": "",
+      "samples": [
+        {
+          "row": 1,
+          "value": 34.22
+        },
+        {
+          "row": 3,
+          "value": 18.7
+        },
+        {
+          "row": 8,
+          "value": 18.86
+        },
+        {
+          "row": 16,
+          "value": 8.18
+        },
+        {
+          "row": 18,
+          "value": 14.08
+        }
+      ]
+    },
+    {
+      "id": "R_outlier_iqr_numeric_all__col=ck_oo_cbo",
+      "type": "outlier",
+      "column": "ck_oo_cbo",
+      "threshold": {
+        "min": null,
+        "max": 0.2,
+        "method": "iqr",
+        "sample_n": 5,
+        "iqr_k": 1.5
+      },
+      "actual": {
+        "value": 0.046296296296296294
+      },
+      "pass": true,
+      "violation_rate": 0.046296296296296294,
+      "severity": "medium",
+      "score": 0.4629629629629629,
+      "message": "",
+      "samples": [
+        {
+          "row": 1,
+          "value": 54.0
+        },
+        {
+          "row": 3,
+          "value": 39.0
+        },
+        {
+          "row": 29,
+          "value": 46.0
+        },
+        {
+          "row": 64,
+          "value": 39.0
+        },
+        {
+          "row": 66,
+          "value": 38.0
+        }
+      ]
+    },
+    {
+      "id": "R_outlier_iqr_numeric_all__col=ck_oo_dit",
+      "type": "outlier",
+      "column": "ck_oo_dit",
+      "threshold": {
+        "min": null,
+        "max": 0.2,
+        "method": "iqr",
+        "sample_n": 5,
+        "iqr_k": 1.5
+      },
+      "actual": {
+        "value": 0.2006172839506173
+      },
+      "pass": false,
+      "violation_rate": 0.2006172839506173,
+      "severity": "medium",
+      "score": 2.006172839506173,
+      "message": "above maximum outlier rate",
+      "samples": [
+        {
+          "row": 4,
+          "value": 2.0
+        },
+        {
+          "row": 6,
+          "value": 2.0
+        },
+        {
+          "row": 11,
+          "value": 2.0
+        },
+        {
+          "row": 14,
+          "value": 2.0
+        },
+        {
+          "row": 16,
+          "value": 2.0
+        }
+      ],
+      "violation_rows": [
+        5,
+        7,
+        12,
+        15,
+        17,
+        23,
+        30,
+        35,
+        48,
+        60,
+        63,
+        64,
+        66,
+        69,
+        71,
+        75,
+        77,
+        78,
+        83,
+        88,
+        92,
+        96,
+        109,
+        120,
+        124,
+        126,
+        130,
+        132,
+        134,
+        136,
+        145,
+        149,
+        158,
+        160,
+        164,
+        166,
+        175,
+        179,
+        182,
+        199,
+        205,
+        207,
+        209,
+        211,
+        215,
+        221,
+        233,
+        239,
+        240,
+        244,
+        247,
+        248,
+        261,
+        262,
+        267,
+        274,
+        275,
+        296,
+        299,
+        300,
+        301,
+        305,
+        309,
+        310,
+        315
+      ]
+    },
+    {
+      "id": "R_outlier_iqr_numeric_all__col=ck_oo_fanIn",
+      "type": "outlier",
+      "column": "ck_oo_fanIn",
+      "threshold": {
+        "min": null,
+        "max": 0.2,
+        "method": "iqr",
+        "sample_n": 5,
+        "iqr_k": 1.5
+      },
+      "actual": {
+        "value": 0.09259259259259259
+      },
+      "pass": true,
+      "violation_rate": 0.09259259259259259,
+      "severity": "medium",
+      "score": 0.9259259259259258,
+      "message": "",
+      "samples": [
+        {
+          "row": 2,
+          "value": 11.0
+        },
+        {
+          "row": 32,
+          "value": 18.0
+        },
+        {
+          "row": 42,
+          "value": 21.0
+        },
+        {
+          "row": 52,
+          "value": 9.0
+        },
+        {
+          "row": 66,
+          "value": 25.0
+        }
+      ]
+    },
+    {
+      "id": "R_outlier_iqr_numeric_all__col=ck_oo_fanOut",
+      "type": "outlier",
+      "column": "ck_oo_fanOut",
+      "threshold": {
+        "min": null,
+        "max": 0.2,
+        "method": "iqr",
+        "sample_n": 5,
+        "iqr_k": 1.5
+      },
+      "actual": {
+        "value": 0.05864197530864197
+      },
+      "pass": true,
+      "violation_rate": 0.05864197530864197,
+      "severity": "medium",
+      "score": 0.5864197530864197,
+      "message": "",
+      "samples": [
+        {
+          "row": 1,
+          "value": 53.0
+        },
+        {
+          "row": 3,
+          "value": 37.0
+        },
+        {
+          "row": 8,
+          "value": 29.0
+        },
+        {
+          "row": 29,
+          "value": 45.0
+        },
+        {
+          "row": 56,
+          "value": 24.0
+        }
+      ]
+    },
+    {
+      "id": "R_outlier_iqr_numeric_all__col=ck_oo_lcom",
+      "type": "outlier",
+      "column": "ck_oo_lcom",
+      "threshold": {
+        "min": null,
+        "max": 0.2,
+        "method": "iqr",
+        "sample_n": 5,
+        "iqr_k": 1.5
+      },
+      "actual": {
+        "value": 0.1574074074074074
+      },
+      "pass": true,
+      "violation_rate": 0.1574074074074074,
+      "severity": "medium",
+      "score": 1.5740740740740742,
+      "message": "",
+      "samples": [
+        {
+          "row": 1,
+          "value": 1128.0
+        },
+        {
+          "row": 3,
+          "value": 300.0
+        },
+        {
+          "row": 8,
+          "value": 276.0
+        },
+        {
+          "row": 9,
+          "value": 190.0
+        },
+        {
+          "row": 18,
+          "value": 171.0
+        }
+      ]
+    },
+    {
+      "id": "R_outlier_iqr_numeric_all__col=ck_oo_noc",
+      "type": "outlier",
+      "column": "ck_oo_noc",
+      "threshold": {
+        "min": null,
+        "max": 0.2,
+        "method": "iqr",
+        "sample_n": 5,
+        "iqr_k": 1.5
+      },
+      "actual": {
+        "value": 0.08641975308641975
+      },
+      "pass": true,
+      "violation_rate": 0.08641975308641975,
+      "severity": "medium",
+      "score": 0.8641975308641975,
+      "message": "",
+      "samples": [
+        {
+          "row": 2,
+          "value": 6.0
+        },
+        {
+          "row": 9,
+          "value": 1.0
+        },
+        {
+          "row": 10,
+          "value": 3.0
+        },
+        {
+          "row": 35,
+          "value": 2.0
+        },
+        {
+          "row": 36,
+          "value": 3.0
+        }
+      ]
+    },
+    {
+      "id": "R_outlier_iqr_numeric_all__col=ck_oo_numberOfAttributes",
+      "type": "outlier",
+      "column": "ck_oo_numberOfAttributes",
+      "threshold": {
+        "min": null,
+        "max": 0.2,
+        "method": "iqr",
+        "sample_n": 5,
+        "iqr_k": 1.5
+      },
+      "actual": {
+        "value": 0.10185185185185185
+      },
+      "pass": true,
+      "violation_rate": 0.10185185185185185,
+      "severity": "medium",
+      "score": 1.0185185185185184,
+      "message": "",
+      "samples": [
+        {
+          "row": 1,
+          "value": 67.0
+        },
+        {
+          "row": 9,
+          "value": 18.0
+        },
+        {
+          "row": 14,
+          "value": 76.0
+        },
+        {
+          "row": 44,
+          "value": 25.0
+        },
+        {
+          "row": 53,
+          "value": 20.0
+        }
+      ]
+    },
+    {
+      "id": "R_outlier_iqr_numeric_all__col=ck_oo_numberOfAttributesInherited",
+      "type": "outlier",
+      "column": "ck_oo_numberOfAttributesInherited",
+      "threshold": {
+        "min": null,
+        "max": 0.2,
+        "method": "iqr",
+        "sample_n": 5,
+        "iqr_k": 1.5
+      },
+      "actual": {
+        "value": 0.19135802469135801
+      },
+      "pass": true,
+      "violation_rate": 0.19135802469135801,
+      "severity": "medium",
+      "score": 1.91358024691358,
+      "message": "",
+      "samples": [
+        {
+          "row": 3,
+          "value": 1.0
+        },
+        {
+          "row": 4,
+          "value": 1.0
+        },
+        {
+          "row": 6,
+          "value": 29.0
+        },
+        {
+          "row": 11,
+          "value": 2.0
+        },
+        {
+          "row": 14,
+          "value": 3.0
+        }
+      ]
+    },
+    {
+      "id": "R_outlier_iqr_numeric_all__col=ck_oo_numberOfLinesOfCode",
+      "type": "outlier",
+      "column": "ck_oo_numberOfLinesOfCode",
+      "threshold": {
+        "min": null,
+        "max": 0.2,
+        "method": "iqr",
+        "sample_n": 5,
+        "iqr_k": 1.5
+      },
+      "actual": {
+        "value": 0.09567901234567901
+      },
+      "pass": true,
+      "violation_rate": 0.09567901234567901,
+      "severity": "medium",
+      "score": 0.95679012345679,
+      "message": "",
+      "samples": [
+        {
+          "row": 1,
+          "value": 1217.0
+        },
+        {
+          "row": 3,
+          "value": 535.0
+        },
+        {
+          "row": 8,
+          "value": 516.0
+        },
+        {
+          "row": 29,
+          "value": 1434.0
+        },
+        {
+          "row": 41,
+          "value": 596.0
+        }
+      ]
+    },
+    {
+      "id": "R_outlier_iqr_numeric_all__col=ck_oo_numberOfMethods",
+      "type": "outlier",
+      "column": "ck_oo_numberOfMethods",
+      "threshold": {
+        "min": null,
+        "max": 0.2,
+        "method": "iqr",
+        "sample_n": 5,
+        "iqr_k": 1.5
+      },
+      "actual": {
+        "value": 0.08024691358024691
+      },
+      "pass": true,
+      "violation_rate": 0.08024691358024691,
+      "severity": "medium",
+      "score": 0.8024691358024691,
+      "message": "",
+      "samples": [
+        {
+          "row": 1,
+          "value": 48.0
+        },
+        {
+          "row": 29,
+          "value": 66.0
+        },
+        {
+          "row": 41,
+          "value": 36.0
+        },
+        {
+          "row": 44,
+          "value": 29.0
+        },
+        {
+          "row": 49,
+          "value": 32.0
+        }
+      ]
+    },
+    {
+      "id": "R_outlier_iqr_numeric_all__col=ck_oo_numberOfMethodsInherited",
+      "type": "outlier",
+      "column": "ck_oo_numberOfMethodsInherited",
+      "threshold": {
+        "min": null,
+        "max": 0.2,
+        "method": "iqr",
+        "sample_n": 5,
+        "iqr_k": 1.5
+      },
+      "actual": {
+        "value": 0.07098765432098765
+      },
+      "pass": true,
+      "violation_rate": 0.07098765432098765,
+      "severity": "medium",
+      "score": 0.7098765432098765,
+      "message": "",
+      "samples": [
+        {
+          "row": 11,
+          "value": 97.0
+        },
+        {
+          "row": 22,
+          "value": 45.0
+        },
+        {
+          "row": 39,
+          "value": 33.0
+        },
+        {
+          "row": 40,
+          "value": 33.0
+        },
+        {
+          "row": 47,
+          "value": 47.0
+        }
+      ]
+    },
+    {
+      "id": "R_outlier_iqr_numeric_all__col=ck_oo_numberOfPrivateAttributes",
+      "type": "outlier",
+      "column": "ck_oo_numberOfPrivateAttributes",
+      "threshold": {
+        "min": null,
+        "max": 0.2,
+        "method": "iqr",
+        "sample_n": 5,
+        "iqr_k": 1.5
+      },
+      "actual": {
+        "value": 0.09876543209876543
+      },
+      "pass": true,
+      "violation_rate": 0.09876543209876543,
+      "severity": "medium",
+      "score": 0.9876543209876543,
+      "message": "",
+      "samples": [
+        {
+          "row": 0,
+          "value": 11.0
+        },
+        {
+          "row": 1,
+          "value": 38.0
+        },
+        {
+          "row": 9,
+          "value": 11.0
+        },
+        {
+          "row": 20,
+          "value": 12.0
+        },
+        {
+          "row": 32,
+          "value": 11.0
+        }
+      ]
+    },
+    {
+      "id": "R_outlier_iqr_numeric_all__col=ck_oo_numberOfPrivateMethods",
+      "type": "outlier",
+      "column": "ck_oo_numberOfPrivateMethods",
+      "threshold": {
+        "min": null,
+        "max": 0.2,
+        "method": "iqr",
+        "sample_n": 5,
+        "iqr_k": 1.5
+      },
+      "actual": {
+        "value": 0.18209876543209877
+      },
+      "pass": true,
+      "violation_rate": 0.18209876543209877,
+      "severity": "medium",
+      "score": 1.8209876543209877,
+      "message": "",
+      "samples": [
+        {
+          "row": 0,
+          "value": 3.0
+        },
+        {
+          "row": 1,
+          "value": 37.0
+        },
+        {
+          "row": 2,
+          "value": 3.0
+        },
+        {
+          "row": 3,
+          "value": 10.0
+        },
+        {
+          "row": 6,
+          "value": 8.0
+        }
+      ]
+    },
+    {
+      "id": "R_outlier_iqr_numeric_all__col=ck_oo_numberOfPublicAttributes",
+      "type": "outlier",
+      "column": "ck_oo_numberOfPublicAttributes",
+      "threshold": {
+        "min": null,
+        "max": 0.2,
+        "method": "iqr",
+        "sample_n": 5,
+        "iqr_k": 1.5
+      },
+      "actual": {
+        "value": 0.1697530864197531
+      },
+      "pass": true,
+      "violation_rate": 0.1697530864197531,
+      "severity": "medium",
+      "score": 1.6975308641975309,
+      "message": "",
+      "samples": [
+        {
+          "row": 1,
+          "value": 1.0
+        },
+        {
+          "row": 4,
+          "value": 1.0
+        },
+        {
+          "row": 9,
+          "value": 7.0
+        },
+        {
+          "row": 12,
+          "value": 1.0
+        },
+        {
+          "row": 14,
+          "value": 74.0
+        }
+      ]
+    },
+    {
+      "id": "R_outlier_iqr_numeric_all__col=ck_oo_numberOfPublicMethods",
+      "type": "outlier",
+      "column": "ck_oo_numberOfPublicMethods",
+      "threshold": {
+        "min": null,
+        "max": 0.2,
+        "method": "iqr",
+        "sample_n": 5,
+        "iqr_k": 1.5
+      },
+      "actual": {
+        "value": 0.07716049382716049
+      },
+      "pass": true,
+      "violation_rate": 0.07716049382716049,
+      "severity": "medium",
+      "score": 0.7716049382716049,
+      "message": "",
+      "samples": [
+        {
+          "row": 9,
+          "value": 16.0
+        },
+        {
+          "row": 29,
+          "value": 54.0
+        },
+        {
+          "row": 32,
+          "value": 19.0
+        },
+        {
+          "row": 43,
+          "value": 17.0
+        },
+        {
+          "row": 49,
+          "value": 18.0
+        }
+      ]
+    },
+    {
+      "id": "R_outlier_iqr_numeric_all__col=ck_oo_rfc",
+      "type": "outlier",
+      "column": "ck_oo_rfc",
+      "threshold": {
+        "min": null,
+        "max": 0.2,
+        "method": "iqr",
+        "sample_n": 5,
+        "iqr_k": 1.5
+      },
+      "actual": {
+        "value": 0.09876543209876543
+      },
+      "pass": true,
+      "violation_rate": 0.09876543209876543,
+      "severity": "medium",
+      "score": 0.9876543209876543,
+      "message": "",
+      "samples": [
+        {
+          "row": 1,
+          "value": 605.0
+        },
+        {
+          "row": 3,
+          "value": 268.0
+        },
+        {
+          "row": 8,
+          "value": 337.0
+        },
+        {
+          "row": 18,
+          "value": 171.0
+        },
+        {
+          "row": 29,
+          "value": 677.0
+        }
+      ]
+    },
+    {
+      "id": "R_outlier_iqr_numeric_all__col=ck_oo_wmc",
+      "type": "outlier",
+      "column": "ck_oo_wmc",
+      "threshold": {
+        "min": null,
+        "max": 0.2,
+        "method": "iqr",
+        "sample_n": 5,
+        "iqr_k": 1.5
+      },
+      "actual": {
+        "value": 0.08641975308641975
+      },
+      "pass": true,
+      "violation_rate": 0.08641975308641975,
+      "severity": "medium",
+      "score": 0.8641975308641975,
+      "message": "",
+      "samples": [
+        {
+          "row": 1,
+          "value": 300.0
+        },
+        {
+          "row": 3,
+          "value": 187.0
+        },
+        {
+          "row": 8,
+          "value": 168.0
+        },
+        {
+          "row": 18,
+          "value": 98.0
+        },
+        {
+          "row": 29,
+          "value": 288.0
+        }
+      ]
+    },
+    {
+      "id": "R_outlier_iqr_numeric_all__col=numberOfBugsFoundUntil:",
+      "type": "outlier",
+      "column": "numberOfBugsFoundUntil:",
+      "threshold": {
+        "min": null,
+        "max": 0.2,
+        "method": "iqr",
+        "sample_n": 5,
+        "iqr_k": 1.5
+      },
+      "actual": {
+        "value": 0.11419753086419752
+      },
+      "pass": true,
+      "violation_rate": 0.11419753086419752,
+      "severity": "medium",
+      "score": 1.1419753086419753,
+      "message": "",
+      "samples": [
+        {
+          "row": 1,
+          "value": 78.0
+        },
+        {
+          "row": 3,
+          "value": 40.0
+        },
+        {
+          "row": 8,
+          "value": 21.0
+        },
+        {
+          "row": 16,
+          "value": 9.0
+        },
+        {
+          "row": 18,
+          "value": 13.0
+        }
+      ]
+    },
+    {
+      "id": "R_outlier_iqr_numeric_all__col=numberOfCriticalBugsFoundUntil:",
+      "type": "outlier",
+      "column": "numberOfCriticalBugsFoundUntil:",
+      "threshold": {
+        "min": null,
+        "max": 0.2,
+        "method": "iqr",
+        "sample_n": 5,
+        "iqr_k": 1.5
+      },
+      "actual": {
+        "value": 0.14506172839506173
+      },
+      "pass": true,
+      "violation_rate": 0.14506172839506173,
+      "severity": "medium",
+      "score": 1.4506172839506173,
+      "message": "",
+      "samples": [
+        {
+          "row": 0,
+          "value": 2.0
+        },
+        {
+          "row": 1,
+          "value": 2.0
+        },
+        {
+          "row": 3,
+          "value": 4.0
+        },
+        {
+          "row": 6,
+          "value": 2.0
+        },
+        {
+          "row": 8,
+          "value": 1.0
+        }
+      ]
+    },
+    {
+      "id": "R_outlier_iqr_numeric_all__col=numberOfHighPriorityBugsFoundUntil:",
+      "type": "outlier",
+      "column": "numberOfHighPriorityBugsFoundUntil:",
+      "threshold": {
+        "min": null,
+        "max": 0.2,
+        "method": "iqr",
+        "sample_n": 5,
+        "iqr_k": 1.5
+      },
+      "actual": {
+        "value": 0.030864197530864196
+      },
+      "pass": true,
+      "violation_rate": 0.030864197530864196,
+      "severity": "medium",
+      "score": 0.30864197530864196,
+      "message": "",
+      "samples": [
+        {
+          "row": 1,
+          "value": 4.0
+        },
+        {
+          "row": 41,
+          "value": 1.0
+        },
+        {
+          "row": 81,
+          "value": 1.0
+        },
+        {
+          "row": 109,
+          "value": 1.0
+        },
+        {
+          "row": 188,
+          "value": 1.0
+        }
+      ]
+    },
+    {
+      "id": "R_outlier_iqr_numeric_all__col=numberOfMajorBugsFoundUntil:",
+      "type": "outlier",
+      "column": "numberOfMajorBugsFoundUntil:",
+      "threshold": {
+        "min": null,
+        "max": 0.2,
+        "method": "iqr",
+        "sample_n": 5,
+        "iqr_k": 1.5
+      },
+      "actual": {
+        "value": 0.2345679012345679
+      },
+      "pass": false,
+      "violation_rate": 0.2345679012345679,
+      "severity": "medium",
+      "score": 2.3456790123456788,
+      "message": "above maximum outlier rate",
+      "samples": [
+        {
+          "row": 0,
+          "value": 2.0
+        },
+        {
+          "row": 1,
+          "value": 11.0
+        },
+        {
+          "row": 2,
+          "value": 1.0
+        },
+        {
+          "row": 3,
+          "value": 6.0
+        },
+        {
+          "row": 6,
+          "value": 3.0
+        }
+      ],
+      "violation_rows": [
+        1,
+        2,
+        3,
+        4,
+        7,
+        9,
+        12,
+        17,
+        22,
+        27,
+        38,
+        42,
+        43,
+        50,
+        51,
+        56,
+        57,
+        61,
+        63,
+        65,
+        66,
+        67,
+        69,
+        73,
+        76,
+        82,
+        86,
+        87,
+        94,
+        96,
+        100,
+        109,
+        110,
+        111,
+        119,
+        122,
+        129,
+        132,
+        137,
+        151,
+        164,
+        170,
+        179,
+        185,
+        189,
+        207,
+        208,
+        209,
+        211,
+        223,
+        226,
+        227,
+        241,
+        245,
+        248,
+        250,
+        252,
+        253,
+        254,
+        256,
+        258,
+        262,
+        270,
+        282,
+        290,
+        294,
+        295,
+        296,
+        297,
+        298,
+        300,
+        305,
+        310,
+        311,
+        314,
+        322
+      ]
+    },
+    {
+      "id": "R_outlier_iqr_numeric_all__col=numberOfNonTrivialBugsFoundUntil:",
+      "type": "outlier",
+      "column": "numberOfNonTrivialBugsFoundUntil:",
+      "threshold": {
+        "min": null,
+        "max": 0.2,
+        "method": "iqr",
+        "sample_n": 5,
+        "iqr_k": 1.5
+      },
+      "actual": {
+        "value": 0.09567901234567901
+      },
+      "pass": true,
+      "violation_rate": 0.09567901234567901,
+      "severity": "medium",
+      "score": 0.95679012345679,
+      "message": "",
+      "samples": [
+        {
+          "row": 1,
+          "value": 71.0
+        },
+        {
+          "row": 3,
+          "value": 38.0
+        },
+        {
+          "row": 8,
+          "value": 21.0
+        },
+        {
+          "row": 18,
+          "value": 11.0
+        },
+        {
+          "row": 29,
+          "value": 9.0
+        }
+      ]
+    },
+    {
+      "id": "R_missing_class",
+      "type": "missing_rate",
+      "column": "class",
+      "threshold": {
+        "min": null,
+        "max": 0.0
+      },
+      "actual": {
+        "value": 0.006172839506172839
+      },
+      "pass": false,
+      "violation_rate": 0.006172839506172839,
+      "severity": "high",
+      "score": 0.18518518518518517,
+      "message": "above maximum missing rate",
+      "violation_rows": [
+        275,
+        285
+      ]
+    }
+  ]
+}

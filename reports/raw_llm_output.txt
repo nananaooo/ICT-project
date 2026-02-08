@@ -1,0 +1,68 @@
+PROMPT:
+<|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+Cutting Knowledge Date: December 2023
+Today Date: 26 Jul 2024
+
+You generate data quality rules for a CSV scanner.
+Output ONLY a JSON object. No explanations.
+Schema (top-level): {
+  "checks": [
+    {
+      "name": string,
+      "rules": [ Rule, ... ]
+    }
+  ]
+}
+Rule schema:
+{
+  "id": string,
+  "type": one of [completeness, domain, missing_rate, outlier, pattern, predicate, range, type, uniqueness],
+  "severity": one of [critical, high, medium, low] (optional),
+  "column": string OR "selector": { dtype, include, exclude, name_regex },
+  ... rule-type specific fields ...
+}
+Rule-type specific fields:
+- completeness: column, min
+- missing_rate: column, max
+- type: column, expected (numeric|datetime|text|categorical), min_parse_success OR min
+- range: column, min_value, max_value, min_compliance OR min
+- uniqueness: column, min
+- domain: column, allowed_values (list), min_compliance OR min
+- pattern: column, regex, min_compliance OR min
+- outlier: column, method (iqr|mad), max_rate OR max, optional iqr_k/mad_threshold/sample_n
+- predicate: columns (2) + operator OR expression, min_compliance OR min
+Selector schema (optional instead of column):
+{
+  "dtype": string or list of strings,
+  "include": list of column names (optional),
+  "exclude": list of column names (optional),
+  "name_regex": string (optional)
+}
+Never use unsupported rule types. Output MUST be valid JSON.
+Return a JSON object only. Do not wrap in markdown or code fences. Do not include trailing comments.<|eot_id|><|start_header_id|>system<|end_header_id|>
+
+REMINDER: Output JSON only. No prose, no markdown.<|eot_id|><|start_header_id|>user<|end_header_id|>
+
+Create rules: age must be between 0 and 120, min compliance 0.99.<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+{"checks": [{"name": "range-checks", "rules": [{"id": "R_range_age", "type": "range", "column": "age", "min_value": 0, "max_value": 120, "min_compliance": 0.99, "severity": "high"}]}]}<|eot_id|><|start_header_id|>user<|end_header_id|>
+
+User id must be unique with min 0.999.<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+{"checks": [{"name": "uniqueness", "rules": [{"id": "R_unique_user_id", "type": "uniqueness", "column": "user_id", "min": 0.999, "severity": "critical"}]}]}<|eot_id|><|start_header_id|>user<|end_header_id|>
+
+All numeric columns except class should have missing rate <= 0.01.<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+{"checks": [{"name": "selector-missing", "rules": [{"id": "R_missing_numeric_all", "type": "missing_rate", "selector": {"dtype": ["numeric"], "exclude": ["class"]}, "max": 0.01, "severity": "medium"}]}]}<|eot_id|><|start_header_id|>user<|end_header_id|>
+
+﻿EQ.csv 데이터셋에 대해 다음 규칙을 만들어줘:
+1) class 컬럼은 "buggy" 또는 "clean"만 허용
+2) numeric 컬럼 전체(단, class 제외)는 missing_rate <= 0.01
+3) numeric 컬럼 전체(단, class 제외)는 type numeric 파싱 성공률 >= 0.99
+4) numeric 컬럼 전체(단, class 제외)는 IQR outlier 비율 <= 0.2<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+
+
+OUTPUT:
+{"checks": [{"name": "domain-class", "rules": [{"id": "R_domain_class", "type": "domain", "column": "class", "allowed_values": ["buggy", "clean"], "min_compliance": 1, "severity": "high"}]}, {"name": "selector-missing", "rules": [{"id": "R_missing_numeric_all", "type": "missing_rate", "selector": {"dtype": ["numeric"], "exclude": ["class"]}, "max": 0.01, "severity": "medium"}]}, {"name": "selector-type", "rules": [{"id": "R_type_numeric_all", "type": "type", "selector": {"dtype": ["numeric"], "exclude": ["class"]}, "expected": "numeric", "min_parse_success": 0.99, "severity": "medium"}]}, {"name": "selector-outlier", "rules": [{"id": "R_outlier_iqr_numeric_all", "type": "outlier", "selector": {"dtype": ["numeric"], "exclude": ["class"]}, "method": "iqr", "max_rate": 0.2, "severity": "medium"}]}]}

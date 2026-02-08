@@ -1,0 +1,265 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>DQ Scan Report</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 24px; color: #222; }
+    h1 { margin-bottom: 8px; }
+    h2 { margin-top: 24px; }
+    .meta { font-size: 14px; color: #444; }
+    table { border-collapse: collapse; width: 100%; margin-top: 8px; }
+    th, td { border: 1px solid #ddd; padding: 8px; vertical-align: top; }
+    th { background: #f5f5f5; text-align: left; }
+    tr:nth-child(even) { background: #fafafa; }
+    td { word-break: break-word; overflow-wrap: anywhere; }
+    .pass { color: #0a7d23; font-weight: 600; }
+    .fail { color: #b00020; font-weight: 600; }
+  </style>
+</head>
+<body>
+  <h1>DQ Scan Report</h1>
+
+  <div class="meta">
+    <div><strong>Input:</strong> data\EQ.csv</div>
+    <div><strong>Rules:</strong> rules.generated.yaml</div>
+    <div><strong>Rows:</strong> 324 | <strong>Cols:</strong> 62</div>
+    <div><strong>Created:</strong> 2026-02-08T12:08:00.844786+00:00</div>
+  </div>
+
+  <h2>Summary</h2>
+  <div>Pass: <span class="pass">180</span> | Fail: <span class="fail">5</span></div>
+
+  <h2>Top Issues</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>type</th>
+        <th>column</th>
+        <th>severity</th>
+        <th>violation_rate</th>
+        <th>violation_rows</th>
+        <th>score</th>
+        <th>message</th>
+      </tr>
+    </thead>
+    <tbody>
+<tr><td>R_outlier_iqr_numeric_all__col=numberOfMajorBugsFoundUntil:</td><td>outlier</td><td>numberOfMajorBugsFoundUntil:</td><td>medium</td><td>0.2345679012345679</td><td>1, 2, 3, 4, 7, 9, 12, 17, 22, 27 ... (total 76)</td><td>2.3456790123456788</td><td>above maximum outlier rate</td></tr>
+<tr><td>R_outlier_iqr_numeric_all__col=WCHU_numberOfPrivateMethods</td><td>outlier</td><td>WCHU_numberOfPrivateMethods</td><td>medium</td><td>0.20679012345679013</td><td>1, 2, 3, 4, 5, 7, 9, 12, 15, 17 ... (total 67)</td><td>2.067901234567901</td><td>above maximum outlier rate</td></tr>
+<tr><td>R_outlier_iqr_numeric_all__col=ck_oo_dit</td><td>outlier</td><td>ck_oo_dit</td><td>medium</td><td>0.2006172839506173</td><td>5, 7, 12, 15, 17, 23, 30, 35, 48, 60 ... (total 65)</td><td>2.006172839506173</td><td>above maximum outlier rate</td></tr>
+<tr><td>R_domain_class</td><td>domain</td><td>class</td><td>high</td><td>0.012422360248447228</td><td>1, 2, 3, 4</td><td>0.37267080745341685</td><td>below minimum compliance</td></tr>
+<tr><td>R_missing_class</td><td>missing_rate</td><td>class</td><td>high</td><td>0.006172839506172839</td><td>275, 285</td><td>0.18518518518518517</td><td>above maximum missing rate</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Full Results</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>type</th>
+        <th>column</th>
+        <th>pass</th>
+        <th>actual.value</th>
+        <th>threshold</th>
+        <th>violation_rate</th>
+        <th>severity</th>
+        <th>score</th>
+        <th>message</th>
+        <th>samples</th>
+        <th>violation_rows</th>
+      </tr>
+    </thead>
+    <tbody>
+<tr><td>R_domain_class</td><td>domain</td><td>class</td><td>False</td><td>0.9875776397515528</td><td>min=1, allowed=2 values</td><td>0.012422360248447228</td><td>high</td><td>0.37267080745341685</td><td>below minimum compliance</td><td></td><td>1, 2, 3, 4</td></tr>
+<tr><td>R_missing_numeric_all__col=CvsEntropy</td><td>missing_rate</td><td>CvsEntropy</td><td>True</td><td>0.0</td><td>max=0.01</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_missing_numeric_all__col=CvsExpEntropy</td><td>missing_rate</td><td>CvsExpEntropy</td><td>True</td><td>0.0</td><td>max=0.01</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_missing_numeric_all__col=CvsLinEntropy</td><td>missing_rate</td><td>CvsLinEntropy</td><td>True</td><td>0.0</td><td>max=0.01</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_missing_numeric_all__col=CvsLogEntropy</td><td>missing_rate</td><td>CvsLogEntropy</td><td>True</td><td>0.0</td><td>max=0.01</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_missing_numeric_all__col=CvsWEntropy</td><td>missing_rate</td><td>CvsWEntropy</td><td>True</td><td>0.0</td><td>max=0.01</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_missing_numeric_all__col=LDHH_cbo</td><td>missing_rate</td><td>LDHH_cbo</td><td>True</td><td>0.0</td><td>max=0.01</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_missing_numeric_all__col=LDHH_dit</td><td>missing_rate</td><td>LDHH_dit</td><td>True</td><td>0.0</td><td>max=0.01</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_missing_numeric_all__col=LDHH_fanIn</td><td>missing_rate</td><td>LDHH_fanIn</td><td>True</td><td>0.0</td><td>max=0.01</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_missing_numeric_all__col=LDHH_fanOut</td><td>missing_rate</td><td>LDHH_fanOut</td><td>True</td><td>0.0</td><td>max=0.01</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_missing_numeric_all__col=LDHH_lcom</td><td>missing_rate</td><td>LDHH_lcom</td><td>True</td><td>0.0</td><td>max=0.01</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_missing_numeric_all__col=LDHH_noc</td><td>missing_rate</td><td>LDHH_noc</td><td>True</td><td>0.0</td><td>max=0.01</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_missing_numeric_all__col=LDHH_numberOfAttributes</td><td>missing_rate</td><td>LDHH_numberOfAttributes</td><td>True</td><td>0.0</td><td>max=0.01</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_missing_numeric_all__col=LDHH_numberOfAttributesInherited</td><td>missing_rate</td><td>LDHH_numberOfAttributesInherited</td><td>True</td><td>0.0</td><td>max=0.01</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_missing_numeric_all__col=LDHH_numberOfLinesOfCode</td><td>missing_rate</td><td>LDHH_numberOfLinesOfCode</td><td>True</td><td>0.0</td><td>max=0.01</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_missing_numeric_all__col=LDHH_numberOfMethods</td><td>missing_rate</td><td>LDHH_numberOfMethods</td><td>True</td><td>0.0</td><td>max=0.01</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_missing_numeric_all__col=LDHH_numberOfMethodsInherited</td><td>missing_rate</td><td>LDHH_numberOfMethodsInherited</td><td>True</td><td>0.0</td><td>max=0.01</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_missing_numeric_all__col=LDHH_numberOfPrivateAttributes</td><td>missing_rate</td><td>LDHH_numberOfPrivateAttributes</td><td>True</td><td>0.0</td><td>max=0.01</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_missing_numeric_all__col=LDHH_numberOfPrivateMethods</td><td>missing_rate</td><td>LDHH_numberOfPrivateMethods</td><td>True</td><td>0.0</td><td>max=0.01</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_missing_numeric_all__col=LDHH_numberOfPublicAttributes</td><td>missing_rate</td><td>LDHH_numberOfPublicAttributes</td><td>True</td><td>0.0</td><td>max=0.01</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_missing_numeric_all__col=LDHH_numberOfPublicMethods</td><td>missing_rate</td><td>LDHH_numberOfPublicMethods</td><td>True</td><td>0.0</td><td>max=0.01</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_missing_numeric_all__col=LDHH_rfc</td><td>missing_rate</td><td>LDHH_rfc</td><td>True</td><td>0.0</td><td>max=0.01</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_missing_numeric_all__col=LDHH_wmc</td><td>missing_rate</td><td>LDHH_wmc</td><td>True</td><td>0.0</td><td>max=0.01</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_missing_numeric_all__col=WCHU_cbo</td><td>missing_rate</td><td>WCHU_cbo</td><td>True</td><td>0.0</td><td>max=0.01</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_missing_numeric_all__col=WCHU_dit</td><td>missing_rate</td><td>WCHU_dit</td><td>True</td><td>0.0</td><td>max=0.01</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_missing_numeric_all__col=WCHU_fanIn</td><td>missing_rate</td><td>WCHU_fanIn</td><td>True</td><td>0.0</td><td>max=0.01</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_missing_numeric_all__col=WCHU_fanOut</td><td>missing_rate</td><td>WCHU_fanOut</td><td>True</td><td>0.0</td><td>max=0.01</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_missing_numeric_all__col=WCHU_lcom</td><td>missing_rate</td><td>WCHU_lcom</td><td>True</td><td>0.0</td><td>max=0.01</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_missing_numeric_all__col=WCHU_noc</td><td>missing_rate</td><td>WCHU_noc</td><td>True</td><td>0.0</td><td>max=0.01</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_missing_numeric_all__col=WCHU_numberOfAttributes</td><td>missing_rate</td><td>WCHU_numberOfAttributes</td><td>True</td><td>0.0</td><td>max=0.01</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_missing_numeric_all__col=WCHU_numberOfAttributesInherited</td><td>missing_rate</td><td>WCHU_numberOfAttributesInherited</td><td>True</td><td>0.0</td><td>max=0.01</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_missing_numeric_all__col=WCHU_numberOfLinesOfCode</td><td>missing_rate</td><td>WCHU_numberOfLinesOfCode</td><td>True</td><td>0.0</td><td>max=0.01</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_missing_numeric_all__col=WCHU_numberOfMethods</td><td>missing_rate</td><td>WCHU_numberOfMethods</td><td>True</td><td>0.0</td><td>max=0.01</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_missing_numeric_all__col=WCHU_numberOfMethodsInherited</td><td>missing_rate</td><td>WCHU_numberOfMethodsInherited</td><td>True</td><td>0.0</td><td>max=0.01</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_missing_numeric_all__col=WCHU_numberOfPrivateAttributes</td><td>missing_rate</td><td>WCHU_numberOfPrivateAttributes</td><td>True</td><td>0.0</td><td>max=0.01</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_missing_numeric_all__col=WCHU_numberOfPrivateMethods</td><td>missing_rate</td><td>WCHU_numberOfPrivateMethods</td><td>True</td><td>0.0</td><td>max=0.01</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_missing_numeric_all__col=WCHU_numberOfPublicAttributes</td><td>missing_rate</td><td>WCHU_numberOfPublicAttributes</td><td>True</td><td>0.0</td><td>max=0.01</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_missing_numeric_all__col=WCHU_numberOfPublicMethods</td><td>missing_rate</td><td>WCHU_numberOfPublicMethods</td><td>True</td><td>0.0</td><td>max=0.01</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_missing_numeric_all__col=WCHU_rfc</td><td>missing_rate</td><td>WCHU_rfc</td><td>True</td><td>0.0</td><td>max=0.01</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_missing_numeric_all__col=WCHU_wmc</td><td>missing_rate</td><td>WCHU_wmc</td><td>True</td><td>0.0</td><td>max=0.01</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_missing_numeric_all__col=ck_oo_cbo</td><td>missing_rate</td><td>ck_oo_cbo</td><td>True</td><td>0.0</td><td>max=0.01</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_missing_numeric_all__col=ck_oo_dit</td><td>missing_rate</td><td>ck_oo_dit</td><td>True</td><td>0.0</td><td>max=0.01</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_missing_numeric_all__col=ck_oo_fanIn</td><td>missing_rate</td><td>ck_oo_fanIn</td><td>True</td><td>0.0</td><td>max=0.01</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_missing_numeric_all__col=ck_oo_fanOut</td><td>missing_rate</td><td>ck_oo_fanOut</td><td>True</td><td>0.0</td><td>max=0.01</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_missing_numeric_all__col=ck_oo_lcom</td><td>missing_rate</td><td>ck_oo_lcom</td><td>True</td><td>0.0</td><td>max=0.01</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_missing_numeric_all__col=ck_oo_noc</td><td>missing_rate</td><td>ck_oo_noc</td><td>True</td><td>0.0</td><td>max=0.01</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_missing_numeric_all__col=ck_oo_numberOfAttributes</td><td>missing_rate</td><td>ck_oo_numberOfAttributes</td><td>True</td><td>0.0</td><td>max=0.01</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_missing_numeric_all__col=ck_oo_numberOfAttributesInherited</td><td>missing_rate</td><td>ck_oo_numberOfAttributesInherited</td><td>True</td><td>0.0</td><td>max=0.01</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_missing_numeric_all__col=ck_oo_numberOfLinesOfCode</td><td>missing_rate</td><td>ck_oo_numberOfLinesOfCode</td><td>True</td><td>0.0</td><td>max=0.01</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_missing_numeric_all__col=ck_oo_numberOfMethods</td><td>missing_rate</td><td>ck_oo_numberOfMethods</td><td>True</td><td>0.0</td><td>max=0.01</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_missing_numeric_all__col=ck_oo_numberOfMethodsInherited</td><td>missing_rate</td><td>ck_oo_numberOfMethodsInherited</td><td>True</td><td>0.0</td><td>max=0.01</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_missing_numeric_all__col=ck_oo_numberOfPrivateAttributes</td><td>missing_rate</td><td>ck_oo_numberOfPrivateAttributes</td><td>True</td><td>0.0</td><td>max=0.01</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_missing_numeric_all__col=ck_oo_numberOfPrivateMethods</td><td>missing_rate</td><td>ck_oo_numberOfPrivateMethods</td><td>True</td><td>0.0</td><td>max=0.01</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_missing_numeric_all__col=ck_oo_numberOfPublicAttributes</td><td>missing_rate</td><td>ck_oo_numberOfPublicAttributes</td><td>True</td><td>0.0</td><td>max=0.01</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_missing_numeric_all__col=ck_oo_numberOfPublicMethods</td><td>missing_rate</td><td>ck_oo_numberOfPublicMethods</td><td>True</td><td>0.0</td><td>max=0.01</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_missing_numeric_all__col=ck_oo_rfc</td><td>missing_rate</td><td>ck_oo_rfc</td><td>True</td><td>0.0</td><td>max=0.01</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_missing_numeric_all__col=ck_oo_wmc</td><td>missing_rate</td><td>ck_oo_wmc</td><td>True</td><td>0.0</td><td>max=0.01</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_missing_numeric_all__col=numberOfBugsFoundUntil:</td><td>missing_rate</td><td>numberOfBugsFoundUntil:</td><td>True</td><td>0.0</td><td>max=0.01</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_missing_numeric_all__col=numberOfCriticalBugsFoundUntil:</td><td>missing_rate</td><td>numberOfCriticalBugsFoundUntil:</td><td>True</td><td>0.0</td><td>max=0.01</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_missing_numeric_all__col=numberOfHighPriorityBugsFoundUntil:</td><td>missing_rate</td><td>numberOfHighPriorityBugsFoundUntil:</td><td>True</td><td>0.0</td><td>max=0.01</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_missing_numeric_all__col=numberOfMajorBugsFoundUntil:</td><td>missing_rate</td><td>numberOfMajorBugsFoundUntil:</td><td>True</td><td>0.0</td><td>max=0.01</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_missing_numeric_all__col=numberOfNonTrivialBugsFoundUntil:</td><td>missing_rate</td><td>numberOfNonTrivialBugsFoundUntil:</td><td>True</td><td>0.0</td><td>max=0.01</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_type_numeric_all__col=CvsEntropy</td><td>type</td><td>CvsEntropy</td><td>True</td><td>1.0</td><td>min=0.99</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_type_numeric_all__col=CvsExpEntropy</td><td>type</td><td>CvsExpEntropy</td><td>True</td><td>1.0</td><td>min=0.99</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_type_numeric_all__col=CvsLinEntropy</td><td>type</td><td>CvsLinEntropy</td><td>True</td><td>1.0</td><td>min=0.99</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_type_numeric_all__col=CvsLogEntropy</td><td>type</td><td>CvsLogEntropy</td><td>True</td><td>1.0</td><td>min=0.99</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_type_numeric_all__col=CvsWEntropy</td><td>type</td><td>CvsWEntropy</td><td>True</td><td>1.0</td><td>min=0.99</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_type_numeric_all__col=LDHH_cbo</td><td>type</td><td>LDHH_cbo</td><td>True</td><td>1.0</td><td>min=0.99</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_type_numeric_all__col=LDHH_dit</td><td>type</td><td>LDHH_dit</td><td>True</td><td>1.0</td><td>min=0.99</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_type_numeric_all__col=LDHH_fanIn</td><td>type</td><td>LDHH_fanIn</td><td>True</td><td>1.0</td><td>min=0.99</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_type_numeric_all__col=LDHH_fanOut</td><td>type</td><td>LDHH_fanOut</td><td>True</td><td>1.0</td><td>min=0.99</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_type_numeric_all__col=LDHH_lcom</td><td>type</td><td>LDHH_lcom</td><td>True</td><td>1.0</td><td>min=0.99</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_type_numeric_all__col=LDHH_noc</td><td>type</td><td>LDHH_noc</td><td>True</td><td>1.0</td><td>min=0.99</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_type_numeric_all__col=LDHH_numberOfAttributes</td><td>type</td><td>LDHH_numberOfAttributes</td><td>True</td><td>1.0</td><td>min=0.99</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_type_numeric_all__col=LDHH_numberOfAttributesInherited</td><td>type</td><td>LDHH_numberOfAttributesInherited</td><td>True</td><td>1.0</td><td>min=0.99</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_type_numeric_all__col=LDHH_numberOfLinesOfCode</td><td>type</td><td>LDHH_numberOfLinesOfCode</td><td>True</td><td>1.0</td><td>min=0.99</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_type_numeric_all__col=LDHH_numberOfMethods</td><td>type</td><td>LDHH_numberOfMethods</td><td>True</td><td>1.0</td><td>min=0.99</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_type_numeric_all__col=LDHH_numberOfMethodsInherited</td><td>type</td><td>LDHH_numberOfMethodsInherited</td><td>True</td><td>1.0</td><td>min=0.99</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_type_numeric_all__col=LDHH_numberOfPrivateAttributes</td><td>type</td><td>LDHH_numberOfPrivateAttributes</td><td>True</td><td>1.0</td><td>min=0.99</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_type_numeric_all__col=LDHH_numberOfPrivateMethods</td><td>type</td><td>LDHH_numberOfPrivateMethods</td><td>True</td><td>1.0</td><td>min=0.99</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_type_numeric_all__col=LDHH_numberOfPublicAttributes</td><td>type</td><td>LDHH_numberOfPublicAttributes</td><td>True</td><td>1.0</td><td>min=0.99</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_type_numeric_all__col=LDHH_numberOfPublicMethods</td><td>type</td><td>LDHH_numberOfPublicMethods</td><td>True</td><td>1.0</td><td>min=0.99</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_type_numeric_all__col=LDHH_rfc</td><td>type</td><td>LDHH_rfc</td><td>True</td><td>1.0</td><td>min=0.99</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_type_numeric_all__col=LDHH_wmc</td><td>type</td><td>LDHH_wmc</td><td>True</td><td>1.0</td><td>min=0.99</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_type_numeric_all__col=WCHU_cbo</td><td>type</td><td>WCHU_cbo</td><td>True</td><td>1.0</td><td>min=0.99</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_type_numeric_all__col=WCHU_dit</td><td>type</td><td>WCHU_dit</td><td>True</td><td>1.0</td><td>min=0.99</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_type_numeric_all__col=WCHU_fanIn</td><td>type</td><td>WCHU_fanIn</td><td>True</td><td>1.0</td><td>min=0.99</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_type_numeric_all__col=WCHU_fanOut</td><td>type</td><td>WCHU_fanOut</td><td>True</td><td>1.0</td><td>min=0.99</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_type_numeric_all__col=WCHU_lcom</td><td>type</td><td>WCHU_lcom</td><td>True</td><td>1.0</td><td>min=0.99</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_type_numeric_all__col=WCHU_noc</td><td>type</td><td>WCHU_noc</td><td>True</td><td>1.0</td><td>min=0.99</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_type_numeric_all__col=WCHU_numberOfAttributes</td><td>type</td><td>WCHU_numberOfAttributes</td><td>True</td><td>1.0</td><td>min=0.99</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_type_numeric_all__col=WCHU_numberOfAttributesInherited</td><td>type</td><td>WCHU_numberOfAttributesInherited</td><td>True</td><td>1.0</td><td>min=0.99</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_type_numeric_all__col=WCHU_numberOfLinesOfCode</td><td>type</td><td>WCHU_numberOfLinesOfCode</td><td>True</td><td>1.0</td><td>min=0.99</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_type_numeric_all__col=WCHU_numberOfMethods</td><td>type</td><td>WCHU_numberOfMethods</td><td>True</td><td>1.0</td><td>min=0.99</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_type_numeric_all__col=WCHU_numberOfMethodsInherited</td><td>type</td><td>WCHU_numberOfMethodsInherited</td><td>True</td><td>1.0</td><td>min=0.99</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_type_numeric_all__col=WCHU_numberOfPrivateAttributes</td><td>type</td><td>WCHU_numberOfPrivateAttributes</td><td>True</td><td>1.0</td><td>min=0.99</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_type_numeric_all__col=WCHU_numberOfPrivateMethods</td><td>type</td><td>WCHU_numberOfPrivateMethods</td><td>True</td><td>1.0</td><td>min=0.99</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_type_numeric_all__col=WCHU_numberOfPublicAttributes</td><td>type</td><td>WCHU_numberOfPublicAttributes</td><td>True</td><td>1.0</td><td>min=0.99</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_type_numeric_all__col=WCHU_numberOfPublicMethods</td><td>type</td><td>WCHU_numberOfPublicMethods</td><td>True</td><td>1.0</td><td>min=0.99</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_type_numeric_all__col=WCHU_rfc</td><td>type</td><td>WCHU_rfc</td><td>True</td><td>1.0</td><td>min=0.99</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_type_numeric_all__col=WCHU_wmc</td><td>type</td><td>WCHU_wmc</td><td>True</td><td>1.0</td><td>min=0.99</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_type_numeric_all__col=ck_oo_cbo</td><td>type</td><td>ck_oo_cbo</td><td>True</td><td>1.0</td><td>min=0.99</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_type_numeric_all__col=ck_oo_dit</td><td>type</td><td>ck_oo_dit</td><td>True</td><td>1.0</td><td>min=0.99</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_type_numeric_all__col=ck_oo_fanIn</td><td>type</td><td>ck_oo_fanIn</td><td>True</td><td>1.0</td><td>min=0.99</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_type_numeric_all__col=ck_oo_fanOut</td><td>type</td><td>ck_oo_fanOut</td><td>True</td><td>1.0</td><td>min=0.99</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_type_numeric_all__col=ck_oo_lcom</td><td>type</td><td>ck_oo_lcom</td><td>True</td><td>1.0</td><td>min=0.99</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_type_numeric_all__col=ck_oo_noc</td><td>type</td><td>ck_oo_noc</td><td>True</td><td>1.0</td><td>min=0.99</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_type_numeric_all__col=ck_oo_numberOfAttributes</td><td>type</td><td>ck_oo_numberOfAttributes</td><td>True</td><td>1.0</td><td>min=0.99</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_type_numeric_all__col=ck_oo_numberOfAttributesInherited</td><td>type</td><td>ck_oo_numberOfAttributesInherited</td><td>True</td><td>1.0</td><td>min=0.99</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_type_numeric_all__col=ck_oo_numberOfLinesOfCode</td><td>type</td><td>ck_oo_numberOfLinesOfCode</td><td>True</td><td>1.0</td><td>min=0.99</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_type_numeric_all__col=ck_oo_numberOfMethods</td><td>type</td><td>ck_oo_numberOfMethods</td><td>True</td><td>1.0</td><td>min=0.99</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_type_numeric_all__col=ck_oo_numberOfMethodsInherited</td><td>type</td><td>ck_oo_numberOfMethodsInherited</td><td>True</td><td>1.0</td><td>min=0.99</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_type_numeric_all__col=ck_oo_numberOfPrivateAttributes</td><td>type</td><td>ck_oo_numberOfPrivateAttributes</td><td>True</td><td>1.0</td><td>min=0.99</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_type_numeric_all__col=ck_oo_numberOfPrivateMethods</td><td>type</td><td>ck_oo_numberOfPrivateMethods</td><td>True</td><td>1.0</td><td>min=0.99</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_type_numeric_all__col=ck_oo_numberOfPublicAttributes</td><td>type</td><td>ck_oo_numberOfPublicAttributes</td><td>True</td><td>1.0</td><td>min=0.99</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_type_numeric_all__col=ck_oo_numberOfPublicMethods</td><td>type</td><td>ck_oo_numberOfPublicMethods</td><td>True</td><td>1.0</td><td>min=0.99</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_type_numeric_all__col=ck_oo_rfc</td><td>type</td><td>ck_oo_rfc</td><td>True</td><td>1.0</td><td>min=0.99</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_type_numeric_all__col=ck_oo_wmc</td><td>type</td><td>ck_oo_wmc</td><td>True</td><td>1.0</td><td>min=0.99</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_type_numeric_all__col=numberOfBugsFoundUntil:</td><td>type</td><td>numberOfBugsFoundUntil:</td><td>True</td><td>1.0</td><td>min=0.99</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_type_numeric_all__col=numberOfCriticalBugsFoundUntil:</td><td>type</td><td>numberOfCriticalBugsFoundUntil:</td><td>True</td><td>1.0</td><td>min=0.99</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_type_numeric_all__col=numberOfHighPriorityBugsFoundUntil:</td><td>type</td><td>numberOfHighPriorityBugsFoundUntil:</td><td>True</td><td>1.0</td><td>min=0.99</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_type_numeric_all__col=numberOfMajorBugsFoundUntil:</td><td>type</td><td>numberOfMajorBugsFoundUntil:</td><td>True</td><td>1.0</td><td>min=0.99</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_type_numeric_all__col=numberOfNonTrivialBugsFoundUntil:</td><td>type</td><td>numberOfNonTrivialBugsFoundUntil:</td><td>True</td><td>1.0</td><td>min=0.99</td><td>0.0</td><td>medium</td><td>0.0</td><td></td><td></td><td>-</td></tr>
+<tr><td>R_outlier_iqr_numeric_all__col=CvsEntropy</td><td>outlier</td><td>CvsEntropy</td><td>True</td><td>0.046296296296296294</td><td>max=0.2, method=iqr, iqr_k=1.5</td><td>0.046296296296296294</td><td>medium</td><td>0.4629629629629629</td><td></td><td>1:38.2812, 3:27.5814, 8:19.6679, 18:19.4467, 29:20.7622</td><td>-</td></tr>
+<tr><td>R_outlier_iqr_numeric_all__col=CvsExpEntropy</td><td>outlier</td><td>CvsExpEntropy</td><td>True</td><td>0.043209876543209874</td><td>max=0.2, method=iqr, iqr_k=1.5</td><td>0.043209876543209874</td><td>medium</td><td>0.43209876543209874</td><td></td><td>1:0.328692, 3:0.170416, 64:0.221266, 85:0.199519, 131:0.152795</td><td>-</td></tr>
+<tr><td>R_outlier_iqr_numeric_all__col=CvsLinEntropy</td><td>outlier</td><td>CvsLinEntropy</td><td>True</td><td>0.040123456790123455</td><td>max=0.2, method=iqr, iqr_k=1.5</td><td>0.040123456790123455</td><td>medium</td><td>0.4012345679012346</td><td></td><td>1:0.149026, 3:0.080838, 64:0.107839, 85:0.073693, 108:0.074612</td><td>-</td></tr>
+<tr><td>R_outlier_iqr_numeric_all__col=CvsLogEntropy</td><td>outlier</td><td>CvsLogEntropy</td><td>True</td><td>0.040123456790123455</td><td>max=0.2, method=iqr, iqr_k=1.5</td><td>0.040123456790123455</td><td>medium</td><td>0.4012345679012346</td><td></td><td>1:1.12823, 3:0.756585, 29:0.538207, 41:0.566668, 64:0.993943</td><td>-</td></tr>
+<tr><td>R_outlier_iqr_numeric_all__col=CvsWEntropy</td><td>outlier</td><td>CvsWEntropy</td><td>True</td><td>0.12345679012345678</td><td>max=0.2, method=iqr, iqr_k=1.5</td><td>0.12345679012345678</td><td>medium</td><td>1.2345679012345678</td><td></td><td>0:0.393707, 1:2.09375, 2:0.484675, 3:0.811584, 6:0.748927</td><td>-</td></tr>
+<tr><td>R_outlier_iqr_numeric_all__col=LDHH_cbo</td><td>outlier</td><td>LDHH_cbo</td><td>True</td><td>0.08641975308641975</td><td>max=0.2, method=iqr, iqr_k=1.5</td><td>0.08641975308641975</td><td>medium</td><td>0.8641975308641975</td><td></td><td>1:0.021602, 3:0.020478, 32:0.015399, 57:0.015573, 64:0.033619</td><td>-</td></tr>
+<tr><td>R_outlier_iqr_numeric_all__col=LDHH_dit</td><td>outlier</td><td>LDHH_dit</td><td>True</td><td>0.037037037037037035</td><td>max=0.2, method=iqr, iqr_k=1.5</td><td>0.037037037037037035</td><td>medium</td><td>0.37037037037037035</td><td></td><td>16:0.000287, 62:0.000287, 63:0.000364, 76:0.000364, 113:0.00022</td><td>-</td></tr>
+<tr><td>R_outlier_iqr_numeric_all__col=LDHH_fanIn</td><td>outlier</td><td>LDHH_fanIn</td><td>True</td><td>0.14506172839506173</td><td>max=0.2, method=iqr, iqr_k=1.5</td><td>0.14506172839506173</td><td>medium</td><td>1.4506172839506173</td><td></td><td>1:0.004756, 2:0.009143, 3:0.005395, 9:0.003493, 32:0.004039</td><td>-</td></tr>
+<tr><td>R_outlier_iqr_numeric_all__col=LDHH_fanOut</td><td>outlier</td><td>LDHH_fanOut</td><td>True</td><td>0.12345679012345678</td><td>max=0.2, method=iqr, iqr_k=1.5</td><td>0.12345679012345678</td><td>medium</td><td>1.2345679012345678</td><td></td><td>1:0.018761, 3:0.020376, 6:0.008318, 8:0.011728, 18:0.007979</td><td>-</td></tr>
+<tr><td>R_outlier_iqr_numeric_all__col=LDHH_lcom</td><td>outlier</td><td>LDHH_lcom</td><td>True</td><td>0.13580246913580246</td><td>max=0.2, method=iqr, iqr_k=1.5</td><td>0.13580246913580246</td><td>medium</td><td>1.3580246913580245</td><td></td><td>0:0.002547, 1:0.008643, 3:0.005642, 8:0.014309, 9:0.002488</td><td>-</td></tr>
+<tr><td>R_outlier_iqr_numeric_all__col=LDHH_noc</td><td>outlier</td><td>LDHH_noc</td><td>True</td><td>0.018518518518518517</td><td>max=0.2, method=iqr, iqr_k=1.5</td><td>0.018518518518518517</td><td>medium</td><td>0.18518518518518517</td><td></td><td>10:0.001069, 42:0.000718, 126:0.000718, 177:0.001069, 274:0.005831</td><td>-</td></tr>
+<tr><td>R_outlier_iqr_numeric_all__col=LDHH_numberOfAttributes</td><td>outlier</td><td>LDHH_numberOfAttributes</td><td>True</td><td>0.13580246913580246</td><td>max=0.2, method=iqr, iqr_k=1.5</td><td>0.13580246913580246</td><td>medium</td><td>1.3580246913580245</td><td></td><td>0:0.004425, 1:0.015698, 2:0.002373, 6:0.00262, 14:0.017758</td><td>-</td></tr>
+<tr><td>R_outlier_iqr_numeric_all__col=LDHH_numberOfAttributesInherited</td><td>outlier</td><td>LDHH_numberOfAttributesInherited</td><td>True</td><td>0.10802469135802469</td><td>max=0.2, method=iqr, iqr_k=1.5</td><td>0.10802469135802469</td><td>medium</td><td>1.0802469135802468</td><td></td><td>11:0.000966, 14:0.002083, 16:0.000814, 18:0.003134, 44:0.000814</td><td>-</td></tr>
+<tr><td>R_outlier_iqr_numeric_all__col=LDHH_numberOfLinesOfCode</td><td>outlier</td><td>LDHH_numberOfLinesOfCode</td><td>True</td><td>0.16666666666666666</td><td>max=0.2, method=iqr, iqr_k=1.5</td><td>0.16666666666666666</td><td>medium</td><td>1.6666666666666665</td><td></td><td>1:0.061578, 3:0.034402, 6:0.00876, 8:0.02181, 18:0.018578</td><td>-</td></tr>
+<tr><td>R_outlier_iqr_numeric_all__col=LDHH_numberOfMethods</td><td>outlier</td><td>LDHH_numberOfMethods</td><td>True</td><td>0.16358024691358025</td><td>max=0.2, method=iqr, iqr_k=1.5</td><td>0.16358024691358025</td><td>medium</td><td>1.6358024691358026</td><td></td><td>0:0.003611, 1:0.009906, 3:0.007, 8:0.015668, 9:0.00273</td><td>-</td></tr>
+<tr><td>R_outlier_iqr_numeric_all__col=LDHH_numberOfMethodsInherited</td><td>outlier</td><td>LDHH_numberOfMethodsInherited</td><td>True</td><td>0.05864197530864197</td><td>max=0.2, method=iqr, iqr_k=1.5</td><td>0.05864197530864197</td><td>medium</td><td>0.5864197530864197</td><td></td><td>11:0.019677, 25:0.007778, 48:0.007592, 59:0.005594, 108:0.007122</td><td>-</td></tr>
+<tr><td>R_outlier_iqr_numeric_all__col=LDHH_numberOfPrivateAttributes</td><td>outlier</td><td>LDHH_numberOfPrivateAttributes</td><td>True</td><td>0.14814814814814814</td><td>max=0.2, method=iqr, iqr_k=1.5</td><td>0.14814814814814814</td><td>medium</td><td>1.4814814814814814</td><td></td><td>0:0.004091, 1:0.015332, 2:0.001953, 6:0.002712, 10:0.006087</td><td>-</td></tr>
+<tr><td>R_outlier_iqr_numeric_all__col=LDHH_numberOfPrivateMethods</td><td>outlier</td><td>LDHH_numberOfPrivateMethods</td><td>True</td><td>0.18209876543209877</td><td>max=0.2, method=iqr, iqr_k=1.5</td><td>0.18209876543209877</td><td>medium</td><td>1.8209876543209877</td><td></td><td>1:0.010354, 2:0.001951, 3:0.004355, 4:0.000577, 8:0.01494</td><td>-</td></tr>
+<tr><td>R_outlier_iqr_numeric_all__col=LDHH_numberOfPublicAttributes</td><td>outlier</td><td>LDHH_numberOfPublicAttributes</td><td>True</td><td>0.10802469135802469</td><td>max=0.2, method=iqr, iqr_k=1.5</td><td>0.10802469135802469</td><td>medium</td><td>1.0802469135802468</td><td></td><td>2:0.00026, 4:0.000402, 8:0.001366, 10:0.006808, 14:0.01632</td><td>-</td></tr>
+<tr><td>R_outlier_iqr_numeric_all__col=LDHH_numberOfPublicMethods</td><td>outlier</td><td>LDHH_numberOfPublicMethods</td><td>True</td><td>0.14506172839506173</td><td>max=0.2, method=iqr, iqr_k=1.5</td><td>0.14506172839506173</td><td>medium</td><td>1.4506172839506173</td><td></td><td>0:0.003049, 1:0.001481, 9:0.002408, 11:0.001705, 16:0.00115</td><td>-</td></tr>
+<tr><td>R_outlier_iqr_numeric_all__col=LDHH_rfc</td><td>outlier</td><td>LDHH_rfc</td><td>True</td><td>0.15123456790123457</td><td>max=0.2, method=iqr, iqr_k=1.5</td><td>0.15123456790123457</td><td>medium</td><td>1.5123456790123457</td><td></td><td>1:0.060301, 3:0.030608, 8:0.019341, 18:0.017204, 21:0.009818</td><td>-</td></tr>
+<tr><td>R_outlier_iqr_numeric_all__col=LDHH_wmc</td><td>outlier</td><td>LDHH_wmc</td><td>True</td><td>0.16049382716049382</td><td>max=0.2, method=iqr, iqr_k=1.5</td><td>0.16049382716049382</td><td>medium</td><td>1.6049382716049383</td><td></td><td>1:0.041329, 3:0.028494, 6:0.008936, 8:0.019782, 16:0.006468</td><td>-</td></tr>
+<tr><td>R_outlier_iqr_numeric_all__col=WCHU_cbo</td><td>outlier</td><td>WCHU_cbo</td><td>True</td><td>0.06790123456790123</td><td>max=0.2, method=iqr, iqr_k=1.5</td><td>0.06790123456790123</td><td>medium</td><td>0.6790123456790123</td><td></td><td>1:16.31, 2:8.28, 3:11.13, 8:10.25, 29:9.14</td><td>-</td></tr>
+<tr><td>R_outlier_iqr_numeric_all__col=WCHU_dit</td><td>outlier</td><td>WCHU_dit</td><td>True</td><td>0.05246913580246913</td><td>max=0.2, method=iqr, iqr_k=1.5</td><td>0.05246913580246913</td><td>medium</td><td>0.5246913580246914</td><td></td><td>16:1.01, 29:1.02, 62:1.01, 63:1.01, 65:1.01</td><td>-</td></tr>
+<tr><td>R_outlier_iqr_numeric_all__col=WCHU_fanIn</td><td>outlier</td><td>WCHU_fanIn</td><td>True</td><td>0.11419753086419752</td><td>max=0.2, method=iqr, iqr_k=1.5</td><td>0.11419753086419752</td><td>medium</td><td>1.1419753086419753</td><td></td><td>2:6.17, 3:6.07, 32:3.03, 36:3.04, 42:3.06</td><td>-</td></tr>
+<tr><td>R_outlier_iqr_numeric_all__col=WCHU_fanOut</td><td>outlier</td><td>WCHU_fanOut</td><td>True</td><td>0.07716049382716049</td><td>max=0.2, method=iqr, iqr_k=1.5</td><td>0.07716049382716049</td><td>medium</td><td>0.7716049382716049</td><td></td><td>1:16.3, 3:10.13, 8:10.25, 16:5.12, 18:6.14</td><td>-</td></tr>
+<tr><td>R_outlier_iqr_numeric_all__col=WCHU_lcom</td><td>outlier</td><td>WCHU_lcom</td><td>True</td><td>0.14506172839506173</td><td>max=0.2, method=iqr, iqr_k=1.5</td><td>0.14506172839506173</td><td>medium</td><td>1.4506172839506173</td><td></td><td>1:23.21, 3:8.87, 8:12.51, 11:3.31, 16:3.2</td><td>-</td></tr>
+<tr><td>R_outlier_iqr_numeric_all__col=WCHU_noc</td><td>outlier</td><td>WCHU_noc</td><td>True</td><td>0.037037037037037035</td><td>max=0.2, method=iqr, iqr_k=1.5</td><td>0.037037037037037035</td><td>medium</td><td>0.37037037037037035</td><td></td><td>2:2.06, 10:1.01, 36:2.02, 42:1.01, 88:1.01</td><td>-</td></tr>
+<tr><td>R_outlier_iqr_numeric_all__col=WCHU_numberOfAttributes</td><td>outlier</td><td>WCHU_numberOfAttributes</td><td>True</td><td>0.09876543209876543</td><td>max=0.2, method=iqr, iqr_k=1.5</td><td>0.09876543209876543</td><td>medium</td><td>0.9876543209876543</td><td></td><td>0:3.04, 1:14.37, 2:3.08, 8:3.13, 14:6.18</td><td>-</td></tr>
+<tr><td>R_outlier_iqr_numeric_all__col=WCHU_numberOfAttributesInherited</td><td>outlier</td><td>WCHU_numberOfAttributesInherited</td><td>True</td><td>0.11728395061728394</td><td>max=0.2, method=iqr, iqr_k=1.5</td><td>0.11728395061728394</td><td>medium</td><td>1.1728395061728394</td><td></td><td>6:4.06, 11:1.01, 14:1.03, 16:1.03, 18:2.03</td><td>-</td></tr>
+<tr><td>R_outlier_iqr_numeric_all__col=WCHU_numberOfLinesOfCode</td><td>outlier</td><td>WCHU_numberOfLinesOfCode</td><td>True</td><td>0.09259259259259259</td><td>max=0.2, method=iqr, iqr_k=1.5</td><td>0.09259259259259259</td><td>medium</td><td>0.9259259259259258</td><td></td><td>1:43.12, 3:24.06, 8:22.0, 16:8.46, 18:17.64</td><td>-</td></tr>
+<tr><td>R_outlier_iqr_numeric_all__col=WCHU_numberOfMethods</td><td>outlier</td><td>WCHU_numberOfMethods</td><td>True</td><td>0.12037037037037036</td><td>max=0.2, method=iqr, iqr_k=1.5</td><td>0.12037037037037036</td><td>medium</td><td>1.2037037037037037</td><td></td><td>1:14.23, 3:7.08, 8:9.23, 11:3.05, 16:3.05</td><td>-</td></tr>
+<tr><td>R_outlier_iqr_numeric_all__col=WCHU_numberOfMethodsInherited</td><td>outlier</td><td>WCHU_numberOfMethodsInherited</td><td>True</td><td>0.040123456790123455</td><td>max=0.2, method=iqr, iqr_k=1.5</td><td>0.040123456790123455</td><td>medium</td><td>0.4012345679012346</td><td></td><td>11:13.4, 18:6.07, 25:6.08, 59:5.11, 108:8.18</td><td>-</td></tr>
+<tr><td>R_outlier_iqr_numeric_all__col=WCHU_numberOfPrivateAttributes</td><td>outlier</td><td>WCHU_numberOfPrivateAttributes</td><td>True</td><td>0.06172839506172839</td><td>max=0.2, method=iqr, iqr_k=1.5</td><td>0.06172839506172839</td><td>medium</td><td>0.6172839506172839</td><td></td><td>0:3.04, 1:11.3, 16:4.04, 29:3.04, 32:3.03</td><td>-</td></tr>
+<tr><td>R_outlier_iqr_numeric_all__col=WCHU_numberOfPrivateMethods</td><td>outlier</td><td>WCHU_numberOfPrivateMethods</td><td>False</td><td>0.20679012345679013</td><td>max=0.2, method=iqr, iqr_k=1.5</td><td>0.20679012345679013</td><td>medium</td><td>2.067901234567901</td><td>above maximum outlier rate</td><td>0:1.01, 1:13.18, 2:2.03, 3:7.09, 4:1.01</td><td>1, 2, 3, 4, 5, 7, 9, 12, 15, 17, 19, 30, 42, 43, 45, 50, 52, 56, 62, 65, 66, 67, 73, 76, 78, 84, 87, 105, 109, 110, 114, 120, 124, 129, 131, 134, 151, 155, 169, 170, 189, 193, 199, 208, 210, 222, 223, 224, 232, 234, 241, 245, 246, 248, 250, 252, 253, 256, 262, 279, 281, 289, 293, 294, 296, 297, 311</td></tr>
+<tr><td>R_outlier_iqr_numeric_all__col=WCHU_numberOfPublicAttributes</td><td>outlier</td><td>WCHU_numberOfPublicAttributes</td><td>True</td><td>0.12654320987654322</td><td>max=0.2, method=iqr, iqr_k=1.5</td><td>0.12654320987654322</td><td>medium</td><td>1.2654320987654322</td><td></td><td>2:1.01, 4:1.01, 8:3.04, 10:1.02, 14:6.18</td><td>-</td></tr>
+<tr><td>R_outlier_iqr_numeric_all__col=WCHU_numberOfPublicMethods</td><td>outlier</td><td>WCHU_numberOfPublicMethods</td><td>True</td><td>0.06790123456790123</td><td>max=0.2, method=iqr, iqr_k=1.5</td><td>0.06790123456790123</td><td>medium</td><td>0.6790123456790123</td><td></td><td>1:3.03, 11:3.04, 18:5.06, 29:5.06, 75:3.07</td><td>-</td></tr>
+<tr><td>R_outlier_iqr_numeric_all__col=WCHU_rfc</td><td>outlier</td><td>WCHU_rfc</td><td>True</td><td>0.08024691358024691</td><td>max=0.2, method=iqr, iqr_k=1.5</td><td>0.08024691358024691</td><td>medium</td><td>0.8024691358024691</td><td></td><td>1:39.75, 3:22.48, 8:17.27, 18:14.78, 29:14.92</td><td>-</td></tr>
+<tr><td>R_outlier_iqr_numeric_all__col=WCHU_wmc</td><td>outlier</td><td>WCHU_wmc</td><td>True</td><td>0.10185185185185185</td><td>max=0.2, method=iqr, iqr_k=1.5</td><td>0.10185185185185185</td><td>medium</td><td>1.0185185185185184</td><td></td><td>1:34.22, 3:18.7, 8:18.86, 16:8.18, 18:14.08</td><td>-</td></tr>
+<tr><td>R_outlier_iqr_numeric_all__col=ck_oo_cbo</td><td>outlier</td><td>ck_oo_cbo</td><td>True</td><td>0.046296296296296294</td><td>max=0.2, method=iqr, iqr_k=1.5</td><td>0.046296296296296294</td><td>medium</td><td>0.4629629629629629</td><td></td><td>1:54.0, 3:39.0, 29:46.0, 64:39.0, 66:38.0</td><td>-</td></tr>
+<tr><td>R_outlier_iqr_numeric_all__col=ck_oo_dit</td><td>outlier</td><td>ck_oo_dit</td><td>False</td><td>0.2006172839506173</td><td>max=0.2, method=iqr, iqr_k=1.5</td><td>0.2006172839506173</td><td>medium</td><td>2.006172839506173</td><td>above maximum outlier rate</td><td>4:2.0, 6:2.0, 11:2.0, 14:2.0, 16:2.0</td><td>5, 7, 12, 15, 17, 23, 30, 35, 48, 60, 63, 64, 66, 69, 71, 75, 77, 78, 83, 88, 92, 96, 109, 120, 124, 126, 130, 132, 134, 136, 145, 149, 158, 160, 164, 166, 175, 179, 182, 199, 205, 207, 209, 211, 215, 221, 233, 239, 240, 244, 247, 248, 261, 262, 267, 274, 275, 296, 299, 300, 301, 305, 309, 310, 315</td></tr>
+<tr><td>R_outlier_iqr_numeric_all__col=ck_oo_fanIn</td><td>outlier</td><td>ck_oo_fanIn</td><td>True</td><td>0.09259259259259259</td><td>max=0.2, method=iqr, iqr_k=1.5</td><td>0.09259259259259259</td><td>medium</td><td>0.9259259259259258</td><td></td><td>2:11.0, 32:18.0, 42:21.0, 52:9.0, 66:25.0</td><td>-</td></tr>
+<tr><td>R_outlier_iqr_numeric_all__col=ck_oo_fanOut</td><td>outlier</td><td>ck_oo_fanOut</td><td>True</td><td>0.05864197530864197</td><td>max=0.2, method=iqr, iqr_k=1.5</td><td>0.05864197530864197</td><td>medium</td><td>0.5864197530864197</td><td></td><td>1:53.0, 3:37.0, 8:29.0, 29:45.0, 56:24.0</td><td>-</td></tr>
+<tr><td>R_outlier_iqr_numeric_all__col=ck_oo_lcom</td><td>outlier</td><td>ck_oo_lcom</td><td>True</td><td>0.1574074074074074</td><td>max=0.2, method=iqr, iqr_k=1.5</td><td>0.1574074074074074</td><td>medium</td><td>1.5740740740740742</td><td></td><td>1:1128.0, 3:300.0, 8:276.0, 9:190.0, 18:171.0</td><td>-</td></tr>
+<tr><td>R_outlier_iqr_numeric_all__col=ck_oo_noc</td><td>outlier</td><td>ck_oo_noc</td><td>True</td><td>0.08641975308641975</td><td>max=0.2, method=iqr, iqr_k=1.5</td><td>0.08641975308641975</td><td>medium</td><td>0.8641975308641975</td><td></td><td>2:6.0, 9:1.0, 10:3.0, 35:2.0, 36:3.0</td><td>-</td></tr>
+<tr><td>R_outlier_iqr_numeric_all__col=ck_oo_numberOfAttributes</td><td>outlier</td><td>ck_oo_numberOfAttributes</td><td>True</td><td>0.10185185185185185</td><td>max=0.2, method=iqr, iqr_k=1.5</td><td>0.10185185185185185</td><td>medium</td><td>1.0185185185185184</td><td></td><td>1:67.0, 9:18.0, 14:76.0, 44:25.0, 53:20.0</td><td>-</td></tr>
+<tr><td>R_outlier_iqr_numeric_all__col=ck_oo_numberOfAttributesInherited</td><td>outlier</td><td>ck_oo_numberOfAttributesInherited</td><td>True</td><td>0.19135802469135801</td><td>max=0.2, method=iqr, iqr_k=1.5</td><td>0.19135802469135801</td><td>medium</td><td>1.91358024691358</td><td></td><td>3:1.0, 4:1.0, 6:29.0, 11:2.0, 14:3.0</td><td>-</td></tr>
+<tr><td>R_outlier_iqr_numeric_all__col=ck_oo_numberOfLinesOfCode</td><td>outlier</td><td>ck_oo_numberOfLinesOfCode</td><td>True</td><td>0.09567901234567901</td><td>max=0.2, method=iqr, iqr_k=1.5</td><td>0.09567901234567901</td><td>medium</td><td>0.95679012345679</td><td></td><td>1:1217.0, 3:535.0, 8:516.0, 29:1434.0, 41:596.0</td><td>-</td></tr>
+<tr><td>R_outlier_iqr_numeric_all__col=ck_oo_numberOfMethods</td><td>outlier</td><td>ck_oo_numberOfMethods</td><td>True</td><td>0.08024691358024691</td><td>max=0.2, method=iqr, iqr_k=1.5</td><td>0.08024691358024691</td><td>medium</td><td>0.8024691358024691</td><td></td><td>1:48.0, 29:66.0, 41:36.0, 44:29.0, 49:32.0</td><td>-</td></tr>
+<tr><td>R_outlier_iqr_numeric_all__col=ck_oo_numberOfMethodsInherited</td><td>outlier</td><td>ck_oo_numberOfMethodsInherited</td><td>True</td><td>0.07098765432098765</td><td>max=0.2, method=iqr, iqr_k=1.5</td><td>0.07098765432098765</td><td>medium</td><td>0.7098765432098765</td><td></td><td>11:97.0, 22:45.0, 39:33.0, 40:33.0, 47:47.0</td><td>-</td></tr>
+<tr><td>R_outlier_iqr_numeric_all__col=ck_oo_numberOfPrivateAttributes</td><td>outlier</td><td>ck_oo_numberOfPrivateAttributes</td><td>True</td><td>0.09876543209876543</td><td>max=0.2, method=iqr, iqr_k=1.5</td><td>0.09876543209876543</td><td>medium</td><td>0.9876543209876543</td><td></td><td>0:11.0, 1:38.0, 9:11.0, 20:12.0, 32:11.0</td><td>-</td></tr>
+<tr><td>R_outlier_iqr_numeric_all__col=ck_oo_numberOfPrivateMethods</td><td>outlier</td><td>ck_oo_numberOfPrivateMethods</td><td>True</td><td>0.18209876543209877</td><td>max=0.2, method=iqr, iqr_k=1.5</td><td>0.18209876543209877</td><td>medium</td><td>1.8209876543209877</td><td></td><td>0:3.0, 1:37.0, 2:3.0, 3:10.0, 6:8.0</td><td>-</td></tr>
+<tr><td>R_outlier_iqr_numeric_all__col=ck_oo_numberOfPublicAttributes</td><td>outlier</td><td>ck_oo_numberOfPublicAttributes</td><td>True</td><td>0.1697530864197531</td><td>max=0.2, method=iqr, iqr_k=1.5</td><td>0.1697530864197531</td><td>medium</td><td>1.6975308641975309</td><td></td><td>1:1.0, 4:1.0, 9:7.0, 12:1.0, 14:74.0</td><td>-</td></tr>
+<tr><td>R_outlier_iqr_numeric_all__col=ck_oo_numberOfPublicMethods</td><td>outlier</td><td>ck_oo_numberOfPublicMethods</td><td>True</td><td>0.07716049382716049</td><td>max=0.2, method=iqr, iqr_k=1.5</td><td>0.07716049382716049</td><td>medium</td><td>0.7716049382716049</td><td></td><td>9:16.0, 29:54.0, 32:19.0, 43:17.0, 49:18.0</td><td>-</td></tr>
+<tr><td>R_outlier_iqr_numeric_all__col=ck_oo_rfc</td><td>outlier</td><td>ck_oo_rfc</td><td>True</td><td>0.09876543209876543</td><td>max=0.2, method=iqr, iqr_k=1.5</td><td>0.09876543209876543</td><td>medium</td><td>0.9876543209876543</td><td></td><td>1:605.0, 3:268.0, 8:337.0, 18:171.0, 29:677.0</td><td>-</td></tr>
+<tr><td>R_outlier_iqr_numeric_all__col=ck_oo_wmc</td><td>outlier</td><td>ck_oo_wmc</td><td>True</td><td>0.08641975308641975</td><td>max=0.2, method=iqr, iqr_k=1.5</td><td>0.08641975308641975</td><td>medium</td><td>0.8641975308641975</td><td></td><td>1:300.0, 3:187.0, 8:168.0, 18:98.0, 29:288.0</td><td>-</td></tr>
+<tr><td>R_outlier_iqr_numeric_all__col=numberOfBugsFoundUntil:</td><td>outlier</td><td>numberOfBugsFoundUntil:</td><td>True</td><td>0.11419753086419752</td><td>max=0.2, method=iqr, iqr_k=1.5</td><td>0.11419753086419752</td><td>medium</td><td>1.1419753086419753</td><td></td><td>1:78.0, 3:40.0, 8:21.0, 16:9.0, 18:13.0</td><td>-</td></tr>
+<tr><td>R_outlier_iqr_numeric_all__col=numberOfCriticalBugsFoundUntil:</td><td>outlier</td><td>numberOfCriticalBugsFoundUntil:</td><td>True</td><td>0.14506172839506173</td><td>max=0.2, method=iqr, iqr_k=1.5</td><td>0.14506172839506173</td><td>medium</td><td>1.4506172839506173</td><td></td><td>0:2.0, 1:2.0, 3:4.0, 6:2.0, 8:1.0</td><td>-</td></tr>
+<tr><td>R_outlier_iqr_numeric_all__col=numberOfHighPriorityBugsFoundUntil:</td><td>outlier</td><td>numberOfHighPriorityBugsFoundUntil:</td><td>True</td><td>0.030864197530864196</td><td>max=0.2, method=iqr, iqr_k=1.5</td><td>0.030864197530864196</td><td>medium</td><td>0.30864197530864196</td><td></td><td>1:4.0, 41:1.0, 81:1.0, 109:1.0, 188:1.0</td><td>-</td></tr>
+<tr><td>R_outlier_iqr_numeric_all__col=numberOfMajorBugsFoundUntil:</td><td>outlier</td><td>numberOfMajorBugsFoundUntil:</td><td>False</td><td>0.2345679012345679</td><td>max=0.2, method=iqr, iqr_k=1.5</td><td>0.2345679012345679</td><td>medium</td><td>2.3456790123456788</td><td>above maximum outlier rate</td><td>0:2.0, 1:11.0, 2:1.0, 3:6.0, 6:3.0</td><td>1, 2, 3, 4, 7, 9, 12, 17, 22, 27, 38, 42, 43, 50, 51, 56, 57, 61, 63, 65, 66, 67, 69, 73, 76, 82, 86, 87, 94, 96, 100, 109, 110, 111, 119, 122, 129, 132, 137, 151, 164, 170, 179, 185, 189, 207, 208, 209, 211, 223, 226, 227, 241, 245, 248, 250, 252, 253, 254, 256, 258, 262, 270, 282, 290, 294, 295, 296, 297, 298, 300, 305, 310, 311, 314, 322</td></tr>
+<tr><td>R_outlier_iqr_numeric_all__col=numberOfNonTrivialBugsFoundUntil:</td><td>outlier</td><td>numberOfNonTrivialBugsFoundUntil:</td><td>True</td><td>0.09567901234567901</td><td>max=0.2, method=iqr, iqr_k=1.5</td><td>0.09567901234567901</td><td>medium</td><td>0.95679012345679</td><td></td><td>1:71.0, 3:38.0, 8:21.0, 18:11.0, 29:9.0</td><td>-</td></tr>
+<tr><td>R_missing_class</td><td>missing_rate</td><td>class</td><td>False</td><td>0.006172839506172839</td><td>max=0.0</td><td>0.006172839506172839</td><td>high</td><td>0.18518518518518517</td><td>above maximum missing rate</td><td></td><td>275, 285</td></tr>
+    </tbody>
+  </table>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+checks:
+  - name: eq-generic
+    rules:
+      - id: R_domain_class
+        type: domain
+        column: class
+        allowed_values: ["buggy", "clean"]
+        min_compliance: 1.0
+        severity: high
+
+      - id: R_missing_numeric_all
+        type: missing_rate
+        selector:
+          dtype: ["numeric"]
+          exclude: ["class"]
+        max: 0.01
+        severity: medium
+
+      - id: R_type_numeric_all
+        type: type
+        selector:
+          dtype: ["numeric"]
+          exclude: ["class"]
+        expected: numeric
+        min: 0.99
+        severity: low
+
+      - id: R_outlier_iqr_numeric_all
+        type: outlier
+        selector:
+          dtype: ["numeric"]
+          exclude: ["class"]
+        method: iqr
+        iqr_k: 1.5
+        max_rate: 0.15
+        sample_n: 5
+        severity: low

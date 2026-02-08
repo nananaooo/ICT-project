@@ -1,0 +1,123 @@
+﻿# configs/rules.yaml
+version: 1
+
+dataset:
+  name: "dq-platform-demo"
+  # reference_path: "data/reference.csv"
+
+global:
+  # Default thresholds (can be overridden per rule)
+  missing_rate_max: 0.05
+  parse_success_min: 0.99
+  uniqueness_min: 0.999
+  outlier_rate_max: 0.02
+  regex_match_min: 0.98
+
+checks:
+  - name: "core-quality"
+    description: "Core rules + outliers"
+
+    rules:
+      # 1) completeness / missing_rate
+      - id: "R1_completeness_user_id"
+        type: "completeness"
+        column: "user_id"
+        min: 1.0
+        severity: "critical"
+        note: "User id should be complete"
+
+      - id: "R2_completeness_age"
+        type: "missing_rate"
+        column: "age"
+        max: 0.05
+        severity: "high"
+
+      # 2) uniqueness
+      - id: "R3_uniqueness_user_id"
+        type: "uniqueness"
+        column: "user_id"
+        min: 0.999
+        severity: "critical"
+        note: "User id should be unique"
+
+      # 3) type/parse
+      - id: "R4_type_age_numeric"
+        type: "type"
+        column: "age"
+        expected: "numeric"   # numeric | categorical | datetime | text
+        min_parse_success: 0.99
+        severity: "high"
+
+      - id: "R5_type_signup_dt"
+        type: "type"
+        column: "signup_date"
+        expected: "datetime"
+        datetime_formats:
+          - "%Y-%m-%d"
+          - "%Y/%m/%d"
+          - "%Y-%m-%d %H:%M:%S"
+        min_parse_success: 0.99
+        severity: "medium"
+
+      # 4) range
+      - id: "R6_range_age"
+        type: "range"
+        column: "age"
+        min_value: 0
+        max_value: 120
+        min_compliance: 0.99
+        severity: "high"
+
+      # 5) pattern
+      - id: "R7_pattern_email"
+        type: "pattern"
+        column: "email"
+        regex: "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$"
+        min_match_rate: 0.98
+        severity: "medium"
+
+      # 6) predicate
+      - id: "R8_predicate_end_after_start"
+        type: "predicate"
+        expression: "end_time >= start_time"
+        scope: "row"          # row | dataset
+        min_compliance: 0.99
+        severity: "high"
+        note: "End time should be after start time"
+
+      # 7) outlier
+      - id: "R9_outlier_income_mad"
+        type: "outlier"
+        column: "income"
+        method: "mad"         # mad | iqr
+        max_rate: 0.02
+        mad_threshold: 3.5
+        severity: "medium"
+
+      - id: "R10_outlier_amount_iqr"
+        type: "outlier"
+        column: "amount"
+        method: "iqr"
+        max_rate: 0.02
+        iqr_k: 1.5
+        severity: "low"
+
+  - name: "categorical-domain"
+    description: "Categorical domain example"
+    rules:
+      - id: "R11_domain_country"
+        type: "domain"
+        column: "country"
+        allowed_values:
+          - "KR"
+          - "US"
+          - "JP"
+          - "CN"
+        min_compliance: 0.98
+        severity: "low"
+        note: "Country must be in the allowed list"
+
+outputs:
+  report_dir: "reports"
+  formats: ["json", "html"]
+  top_issues: 10
