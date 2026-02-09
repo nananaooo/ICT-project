@@ -1,0 +1,64 @@
+{
+  "checks": [
+    {
+      "name": "EQ-rules",
+      "rules": [
+        {
+          "id": "R_domain_class",
+          "type": "domain",
+          "column": "class",
+          "allowed_values": [
+            "buggy",
+            "clean"
+          ],
+          "min_compliance": 0,
+          "severity": "high"
+        },
+        {
+          "id": "R_missing_numeric_all",
+          "type": "missing_rate",
+          "selector": {
+            "dtype": [
+              "numeric"
+            ],
+            "exclude": [
+              "class"
+            ]
+          },
+          "max": 0.01,
+          "severity": "medium"
+        },
+        {
+          "id": "R_type_numeric_all",
+          "type": "type",
+          "selector": {
+            "dtype": [
+              "numeric"
+            ],
+            "exclude": [
+              "class"
+            ]
+          },
+          "expected": "numeric",
+          "min_parse_success": 0.99,
+          "severity": "medium"
+        },
+        {
+          "id": "R_outlier_iqr_numeric_all",
+          "type": "outlier",
+          "column": "numeric",
+          "method": "iqr",
+          "max_rate": 0.2,
+          "severity": "medium"
+        },
+        {
+          "id": "R_missing_class",
+          "type": "missing_rate",
+          "column": "class",
+          "max": 0,
+          "severity": "high"
+        }
+      ]
+    }
+  ]
+}

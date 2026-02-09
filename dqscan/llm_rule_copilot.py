@@ -13,7 +13,12 @@ import yaml
 from .planner import SUPPORTED_RULE_TYPES
 
 # NOTE: Set your Hugging Face API key here if you want to hardcode it in the codebase.
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+# huggingface token 카톡에 있는거 넣어서 실행
 HF_API_KEY = ""
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+
 # Default HF model; update if you want a different one.
 HF_MODEL = "meta-llama/Llama-3.1-8B-Instruct"
 # Optional: If you created a dedicated HF Inference Endpoint, set the full URL here.
@@ -24,7 +29,7 @@ TRANSFORMERS_MODEL = ""
 # Optional: Use bitsandbytes 4-bit quantization when loading local model.
 TRANSFORMERS_LOAD_IN_4BIT = True
 # Optional: Max new tokens for local generation.
-TRANSFORMERS_MAX_NEW_TOKENS = 2048
+TRANSFORMERS_MAX_NEW_TOKENS = 512
 # Optional: Context length for tokenizer truncation.
 TRANSFORMERS_CTX = 2048
 

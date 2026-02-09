@@ -1,10 +1,10 @@
 {
   "meta": {
-    "input_path": "data\\EQ.csv",
-    "rules_path": "rules.generated.yaml",
+    "input_path": "C:\\Users\\SHINJUNGHYUN\\AISE_projects\\git_git_ict\\ICT-project\\reports\\web_ui\\20260209_124310\\EQ.csv",
+    "rules_path": "C:\\Users\\SHINJUNGHYUN\\AISE_projects\\git_git_ict\\ICT-project\\reports\\web_ui\\20260209_124310\\rules.generated.yaml",
     "rows": 324,
     "cols": 62,
-    "created_at": "2026-02-08T13:40:45.134983+00:00"
+    "created_at": "2026-02-09T03:44:48.644441+00:00"
   },
   "summary": {
     "pass": 180,
@@ -252,21 +252,6 @@
         ]
       },
       {
-        "id": "R_domain_class",
-        "type": "domain",
-        "column": "class",
-        "severity": "high",
-        "violation_rate": 0.012422360248447228,
-        "score": 0.37267080745341685,
-        "message": "below minimum compliance",
-        "violation_rows": [
-          1,
-          2,
-          3,
-          4
-        ]
-      },
-      {
         "id": "R_missing_class",
         "type": "missing_rate",
         "column": "class",
@@ -277,6 +262,21 @@
         "violation_rows": [
           275,
           285
+        ]
+      },
+      {
+        "id": "R_domain_class",
+        "type": "domain",
+        "column": "class",
+        "severity": "medium",
+        "violation_rate": 0.012422360248447228,
+        "score": 0.12422360248447228,
+        "message": "below minimum compliance",
+        "violation_rows": [
+          1,
+          2,
+          3,
+          4
         ]
       }
     ]
@@ -299,8 +299,8 @@
       },
       "pass": false,
       "violation_rate": 0.012422360248447228,
-      "severity": "high",
-      "score": 0.37267080745341685,
+      "severity": "medium",
+      "score": 0.12422360248447228,
       "message": "below minimum compliance",
       "violation_rows": [
         1,

@@ -56,13 +56,13 @@ All numeric columns except class should have missing rate <= 0.01.<|eot_id|><|st
 
 {"checks": [{"name": "selector-missing", "rules": [{"id": "R_missing_numeric_all", "type": "missing_rate", "selector": {"dtype": ["numeric"], "exclude": ["class"]}, "max": 0.01, "severity": "medium"}]}]}<|eot_id|><|start_header_id|>user<|end_header_id|>
 
-﻿EQ.csv 데이터셋에 대해 다음 규칙을 만들어줘:
-1) class 컬럼은 "buggy" 또는 "clean"만 허용
-2) numeric 컬럼 전체(단, class 제외)는 missing_rate <= 0.01
-3) numeric 컬럼 전체(단, class 제외)는 type numeric 파싱 성공률 >= 0.99
+EQ.csv 데이터셋에 대해 다음 규칙을 만들어줘:
+1) class 컬럼은 "buggy" 또는 "clean"만 허용
+2) numeric 컬럼 전체(단, class 제외)는 missing_rate <= 0.01
+3) numeric 컬럼 전체(단, class 제외)는 type numeric 파싱 성공률 >= 0.99
 4) numeric 컬럼 전체(단, class 제외)는 IQR outlier 비율 <= 0.2<|eot_id|><|start_header_id|>assistant<|end_header_id|>
 
 
 
 OUTPUT:
-{"checks": [{"name": "domain-class", "rules": [{"id": "R_domain_class", "type": "domain", "column": "class", "allowed_values": ["buggy", "clean"], "min_compliance": 1, "severity": "high"}]}, {"name": "selector-missing", "rules": [{"id": "R_missing_numeric_all", "type": "missing_rate", "selector": {"dtype": ["numeric"], "exclude": ["class"]}, "max": 0.01, "severity": "medium"}]}, {"name": "selector-type", "rules": [{"id": "R_type_numeric_all", "type": "type", "selector": {"dtype": ["numeric"], "exclude": ["class"]}, "expected": "numeric", "min_parse_success": 0.99, "severity": "medium"}]}, {"name": "selector-outlier", "rules": [{"id": "R_outlier_iqr_numeric_all", "type": "outlier", "selector": {"dtype": ["numeric"], "exclude": ["class"]}, "method": "iqr", "max_rate": 0.2, "severity": "medium"}]}]}
+{"checks": [{"name": "EQ-rules", "rules": [{"id": "R_domain_class", "type": "domain", "column": "class", "allowed_values": ["buggy", "clean"], "min_compliance": 1}, {"id": "R_missing_numeric_all", "type": "missing_rate", "selector": {"dtype": ["numeric"], "exclude": ["class"]}, "max": 0.01}, {"id": "R_type_numeric_all", "type": "type", "selector": {"dtype": ["numeric"], "exclude": ["class"]}, "expected": "numeric", "min_parse_success": 0.99}, {"id": "R_outlier_iqr_numeric_all", "type": "outlier", "selector": {"dtype": ["numeric"], "exclude": ["class"]}, "method": "iqr", "max_rate": 0.2}]}]}
